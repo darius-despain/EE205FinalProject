@@ -4,6 +4,8 @@
 // C Monsters
 // 4/16/2017
 
+#include "tamagotchi.h"
+
 void tamagotchi::hunger() {
     --hunger;
     return;
@@ -34,7 +36,22 @@ bool tamagotchi::feed(std::string food) {
 }
 
 void tamagotchi::discipline() {
-
+    if (attention && hunger >= 4) {
+            discipline += 1;
+            return;
+    }
+    if (attention && health >= MAXHEALTH) {
+            discipline += 1;
+            return;
+    }
+    if (attention && (discipline / age) < 2) {
+        discipline += 1;
+        return;
+    }
+    else {
+        happiness -= 1;
+        return;
+    }
 }
 
 int tamagotchi::form() {
