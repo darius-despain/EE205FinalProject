@@ -7,24 +7,26 @@
 
 class tamagotchi{
 private:
-    int happiness;      // 1 - 4
-    int health;         // 1 - MAXHEALTH
-    int hunger;         // 1 - 4
+    int happiness;      // 0 - 4
+    int health;         // 0 - MAXHEALTH
+    int hunger;         // 0 - 4
     int age;            // 0 - MAXAGE
-    int weight;         // 1 - MAXWEIGHT
-    int discipline;     // 1 - MAXDISC
+    int weight;         // 0 - MAXWEIGHT
+    int discipline;     // 0 - MAXDISC
     int sick;           // 0 or 1
     int sleep;          // 0 or 1
-    int hygiene;        // 1 - MAXHYG
+    int hygiene;        // 0 - MAXHYG
+    int form;           // 0 - MAXFORM
 public:
-    int hunger();       // decrease hunger value by 1
-    int sick();         // set sick variable to 1
-    int feed();         // increase hunger value, keep track of overfeeding
-    int light();        // set to 1 if tamagotchi awake, if 1 and sleeping decrease happiness
-    int drop();         // decrease hygiene value, lower than threshold decrease health by 1
-    int hygiene();      // increase hygiene value
-    int play();         // increase happiness by 1 if won, decrease if lost
-    int medicine();     // set sick variable to 0
-    int attention();    // send notification to user
-    int discipline();   // increase discipline variable 
+    void hunger();       // decrease hunger value by 1
+    void sick();         // set sick variable to 1
+    void feed();         // increase hunger value, keep track of overfeeding
+    void light();        // set to 1 if tamagotchi awake, if 1 and sleeping decrease happiness
+    void poop();         // decrease hygiene value, lower than threshold decrease health by 1
+    void hygiene();      // increase hygiene value
+    void play();         // increase happiness by 1 if won, decrease if lost
+    void medicine();     // set sick variable to 0
+    void attention();    // send notification to user
+    void discipline();   // increase discipline variable 
+    void sleep();        // set sleep variable to 1
 };
