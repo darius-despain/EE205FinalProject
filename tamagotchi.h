@@ -30,12 +30,12 @@ public:
     void sick();        // set sick variable to 1
     bool feed();        // increase hunger value, keep track of overfeeding
     void light();       // set to 1 if tamagotchi awake, if 1 and sleeping decrease happiness
-    void poop();        // decrease hygiene value, lower than threshold decrease health by 1
-    void hygiene();     // increase hygiene value
+    void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
+    void clean();     // increase hygiene value by cleaning up
     void play();        // increase happiness by 1 if won, decrease if lost
     void medicine();    // set sick variable to 0
     bool attention();   // set attention variable to 1, return true if notification sent
-    void discipline();  // increase discipline variable 
+    void discipline();  // increase discipline variable
     void sleep();       // set sleep variable to 1
     int form();         // set the form of tamagotchi
 };
