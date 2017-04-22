@@ -23,5 +23,13 @@ void tamagotchi::clean(){
 
 // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
 void tamagotchi::poop(){
-
+  // check if it needs to poop
+  if(){
+    // if it does, increase number of poop on screen
+    hygiene++;
+  }  
+  // have a chance of reducing happiness proportional to hygiene
+  int n = rand() % 10;
+  if(n <= hygiene && hygiene != 0){
+    happiness -= 1;
 }

@@ -28,7 +28,7 @@ private:
     bool light;         // true or false; current light setting
 public:
     tamagotchi()
-        :happiness(4), health(MAXHEALTH), hunger(4), age(0), weight(MAXWEIGHT/2), discipline(0) {}
+        :happiness(4), health(MAXHEALTH), hunger(4), age(0), weight(MAXWEIGHT/2), discipline(0), hygiene(MAXHYG) {}
 
     void hunger();      // decrease hunger value by 1
     void sick();        // has a 10% chance of getting sick
