@@ -5,6 +5,9 @@
 // 4/16/2017
 
 #include <string>
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
 
 #define MAXHEALTH 10
 #define MAXAGE 15
@@ -19,19 +22,20 @@ private:
     int hunger;         // 0 - 4
     int age;            // 0 - MAXAGE
     int weight;         // 0 - MAXWEIGHT
-    int discipline;     // 0 - MAXDISC
+    int disciplineS;     // 0 - MAXDISC
     bool sick;      // true or false
-    bool sleep;     // true or false
-    bool attention;     // true or false
+    bool sleepS;     // true or false
+    bool attentionS;     // true or false
     int hygiene;        // 0 - MAXHYG
-    int form;           // 0 - 5
+    int formS;           // 0 - 5
     bool light;         // true or false; current light setting
+    clock_t clk;
 public:
     tamagotchi()
-        :happiness(4), health(MAXHEALTH), hunger(4), age(0), weight(MAXWEIGHT/2), discipline(0), hygiene(MAXHYG) {}
+        :happiness(4), health(MAXHEALTH), hunger(4), age(0), weight(MAXWEIGHT/2), disciplineS(0), hygiene(MAXHYG), clk(clock()), sick(false) {}
 
-    void hunger();      // decrease hunger value by 1
-    void sick();        // has a 10% chance of getting sick
+    void hungry();      // decrease hunger value by 1
+    void sickly();        // has a 10% chance of getting sick
     bool attention();   // set attention variable to 1, return true if notification sent
     void sleep();       // set sleep variable to 1
 
@@ -48,6 +52,10 @@ public:
     void mainDisplay(); //displays the "Game Window" including all elements. Considers light and other background conditions
     void formDisplay(); //displays the tomagotchi at current form, also displays if it is sleeping and emotions
     void poopDisplay(); //displays poop on the screen at empty spot
+    void displayTest();
+
+    void setClk(clock_t t){clk = t; }
+    clock_t getClk(){ return clk;}
 
 
 
