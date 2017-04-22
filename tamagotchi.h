@@ -20,15 +20,15 @@ private:
     int age;            // 0 - MAXAGE
     int weight;         // 0 - MAXWEIGHT
     int discipline;     // 0 - MAXDISC
-    bool sick = 0;      // true or false
-    bool sleep = 0;     // true or false
+    bool sick;      // true or false
+    bool sleep;     // true or false
     bool attention;     // true or false
     int hygiene;        // 0 - MAXHYG
     int form;           // 0 - 5
     bool light;         // true or false; current light setting
 public:
     void hunger();      // decrease hunger value by 1
-    void sick();        // set sick variable to 1
+    void sick();        // has a 10% chance of getting sick
     bool attention();   // set attention variable to 1, return true if notification sent
     void sleep();       // set sleep variable to 1
 
@@ -45,7 +45,7 @@ public:
     void mainDisplay(); //displays the "Game Window" including all elements. Considers light and other background conditions
     void formDisplay(); //displays the tomagotchi at current form, also displays if it is sleeping and emotions
     void poopDisplay(); //displays poop on the screen at empty spot
-    
+
 
 
 
