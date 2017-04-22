@@ -27,6 +27,9 @@ private:
     int form;           // 0 - 5
     bool light;         // true or false; current light setting
 public:
+    tamagotchi()
+        :happiness(4), health(MAXHEALTH), hunger(4), age(0), weight(MAXWEIGHT/2), discipline(0) {}
+
     void hunger();      // decrease hunger value by 1
     void sick();        // set sick variable to 1
     bool attention();   // set attention variable to 1, return true if notification sent
