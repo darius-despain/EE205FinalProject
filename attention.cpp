@@ -56,3 +56,8 @@ void tamagotchi::play(){ //5 rounds of guessing. win == +1 happiness
   else
     cout << "Sorry, you lost the game.\n";
 }
+
+void tamagotchi::wake() {
+	if (light == false) light = true;
+	sleepS = false;
+}
