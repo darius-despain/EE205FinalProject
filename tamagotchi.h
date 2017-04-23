@@ -41,7 +41,7 @@ public:
     bool attention();   // set attention variable to 1, return true if notification sent
     void sleep();       // set sleep variable to 1
     void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
-    int form();         // set the form of tamagotchi
+    int form(int v);         // set the form of tamagotchi
 
     //user controlled functions
     bool feed(std::string food);        // increase hunger value, keep track of overfeeding
