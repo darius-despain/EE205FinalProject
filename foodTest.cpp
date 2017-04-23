@@ -30,7 +30,7 @@ int main() {
 		if (input == 4) {
 			std::cout << "Choose a number between 0 and 20" << std::endl;
 			std::cin >> input;
-			std::cout << t.setAge(input) << std::endl;
+			t.setAge(input);
 			input = 4;
 		}
 		//display results
