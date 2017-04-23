@@ -6,7 +6,7 @@
 
 #include "tamagotchi.h"
 
-void tamagotchi::hunger() {
+void tamagotchi::digest() {
     --hunger;
     return;
 }
