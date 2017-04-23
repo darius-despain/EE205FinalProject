@@ -8,36 +8,62 @@
 
 int main() {
 	std::cout << '\f';
-    tamagotchi t;
-	int input = 0;
-    
-	//get user input
-	std::cout << "Choose desired function:\n0: Exit\n1: Digest\n2: Feed\n3: Discipline\n4: Form";
-	std::cin >> input;
+	tamagotchi t;
+	int input = 1;
+	t.setAge(0);
+
 	//start loop
 	while (input != 0) {
-		if (input == 1) { t.digest(); }
+		// test feed function
 		if (input == 2) {
-			std::cout << "Feed:\n1: Meal\n 2: Snack\n" << std::endl;
+			std::cout << "Feed:\n1: Meal\n2: Snack\n";
 			std::cin >> input;
-			if (input == 1) { t.feed("meal"); }
-			if (input == 2) { t.feed("snack"); }
+			if (input == 1) { 
+				std::cout << "Fed: "
+					<< t.feed("meal") << std::endl; 
+			}
+	
+			if (input == 2) { 
+				std::cout << "Fed: "
+					<< t.feed("snack") << std::endl; 
+			}
 			input = 2;
 		}
+		// test discipline function
 		if (input == 3) {
-			std::cout << "" << std::endl;
+			std::cout << "Call for help? (1) otherwise (0): ";
+			std::cin >> input;
+			if (input == 1) {
+				t.setAttention(true);
+				t.discipline(); 
+			}
+			else if (input == 0) {
+				t.setAttention(false);
+				std::cout << "Is tamagotchi misbehaving? (1) otherwise (0): ";
+				std::cin >> input;
+				if (input == 1) {
+					t.setMisbehave(true);
+				}
+				else {
+					t.setMisbehave(false);
+				}
+			}
+			t.discipline();
+			input = 3;
 		}
+		// test form function
 		if (input == 4) {
-			std::cout << "Choose a number between 0 and 20" << std::endl;
+			std::cout << "Please Input Age: ";
 			std::cin >> input;
 			t.setAge(input);
+			t.form();
 			input = 4;
 		}
-		//display results
-		t.displayTest();
 		//check for user input
-		std::cout << "Choose desired function:\n0: Exit\n1: continue\n2: Medicine\n3: Clean\n";
+		std::cout << "Choose desired function:\n0: Exit\n1: Continue\n2: Feed\n3: Discipline\n4: Form\n";
 		std::cin >> input;
+		t.digest();
+		t.displayTest();
 	}
 }
 
@@ -45,5 +71,6 @@ void tamagotchi::displayTest() {
 	std::cout << "\f";
 	std::cout << "hunger: " << hunger << std::endl;
 	std::cout << "discipline: " << disciplineS << std::endl;
-	std::cout << "form: " << formS << std::endl;
+	std::cout << "form: " << form() << std::endl;
+	std::cout << "happiness: " << happiness << std::endl;
 }
