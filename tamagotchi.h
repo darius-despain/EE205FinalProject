@@ -44,7 +44,7 @@ public:
     int form();         // set the form of tamagotchi
 
     //user controlled functions
-    bool feed();        // increase hunger value, keep track of overfeeding
+    bool feed(std::string food);        // increase hunger value, keep track of overfeeding
     void lightSwitch();  // set to 1 if tamagotchi awake, if 1 and sleeping decrease happiness
     void clean();     // increase hygiene value by cleaning up
     void medicine();    // set sick variable to 0
