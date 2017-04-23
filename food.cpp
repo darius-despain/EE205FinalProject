@@ -8,6 +8,9 @@
 
 void tamagotchi::digest() {
     --hunger;
+    if (hunger < 0) {
+	happiness -= (rand() % 2);
+    }
     return;
 }
 
@@ -22,6 +25,7 @@ bool tamagotchi::feed(std::string food) {
         if (hunger > 4) {
             weight += (hunger - 4);
         }
+	happiness += (rand() % 2);
         attentionS = false;
         return true;
     }
@@ -31,54 +35,53 @@ bool tamagotchi::feed(std::string food) {
         if (hunger > 4) {
             weight += (hunger - 4);
         }
-		attentionS = false;
+	happiness += (rand() % 2);
+	attentionS = false;
         return true;
     }
+    misbehave = true;
     return false;
 }
 
 void tamagotchi::discipline() {
-    if (attentionS && hunger >= 4) {
-            disciplineS += 1;
-            attentionS = false;
+    happiness -= (rand() % 2) + 1;
+
+    if (misbehave && hunger < 4) {
+            disciplineS += (rand() % 4) + 1;
             return;
     }
-    if (attentionS && health >= MAXHEALTH) {
-            disciplineS += 1;
-            attentionS = false;
+    if (misbehave && happiness != 4) {
+            disciplineS += (rand() % 4) + 1;
             return;
     }
-    if (attentionS && (disciplineS / age) < 2) {
-        disciplineS += 1;
+    if (attentionS && disciplineS < (rand() % age)) {
+        disciplineS += (rand() % 4) + 1;
         attentionS = false;
-        return;
-    }
-    else {      // discipline for no reason
-        happiness -= 1;
         return;
     }
 }
 
 int tamagotchi::form() {
-    if (age < 1) {          // egg form
-        form = 0;
+    if (age < 0) { return -1; }
+    else if (age < 1) {          // egg form
+        formS = 0;
     }
-    if (age < 5) {          // baby form
-        form = 1;
+    else if (age < 5) {          // baby form
+        formS = 1;
     }
-    else if (age < 10) {    // child form
-        form = 2;
+    else if (age < 17) {    // child form
+        formS = 2;
     }
     else if (age > 17) {    // adult form
-        if (hunger == 4 && happiness == 4) {    // excellent form
-            form = 3;
+        if (disciplineS > age && happiness >= 4) {    // excellent form
+            formS = 3;
         }
-        if (hunger >= 2 && happiness >= 2) {    // average form
-            form = 4;
+        else if (disciplineS > age / 2 && happiness >= 2) {    // average form
+            formS = 4;
         }
-        if (hunger < 2 && happiness < 2) {      // bad form
-            form = 5;
+        else if (happiness < 2) {      // bad form
+            formS = 5;
         }
     }
-    return form;
+    return formS;
 }
