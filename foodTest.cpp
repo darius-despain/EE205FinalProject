@@ -9,6 +9,7 @@
 int main() {
 	std::cout << '\f';
     tamagotchi t;
+	int input = 0;
     
 	//get user input
 	std::cout << "Choose desired function:\n0: Exit\n1: Digest\n2: Feed\n3: Discipline\n4: Form";
