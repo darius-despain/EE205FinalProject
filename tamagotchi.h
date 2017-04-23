@@ -10,7 +10,7 @@
 #include <iostream>
 
 #define MAXHEALTH 10
-#define MAXAGE 15
+#define MAXAGE 20
 #define MAXWEIGHT 20
 #define MAXDISC 15
 #define MAXHYG 10
@@ -29,6 +29,7 @@ private:
     int hygiene;        // 0 - MAXHYG
     int formS;           // 0 - 5
     bool light;         // true or false; current light setting
+    bool misbehave;	// true if tamagotchi doesnt eat when hungry or play when sad
     clock_t clk;
 public:
     tamagotchi()
@@ -59,12 +60,10 @@ public:
     void displayTest();
 
     //getters and setters
-	void setAttention(bool v) { attentionS = v; }
-	void setAge(int v) { age = v; }
+    void setAttention(bool v) { attentionS = v; }
+    void setAge(int v) { age = v; }
+    void setMisbehave(bool v) { misbehave = v; }
     void setClk(clock_t t){clk = t; }
     clock_t getClk(){ return clk;}
-
-
-
 
 };
