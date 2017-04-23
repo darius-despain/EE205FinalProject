@@ -22,7 +22,7 @@ bool tamagotchi::feed(std::string food) {
         if (hunger > 4) {
             weight += (hunger - 4);
         }
-        attention = false;
+        attentionS = false;
         return true;
     }
     // tamagotchi eats a snack
@@ -31,26 +31,26 @@ bool tamagotchi::feed(std::string food) {
         if (hunger > 4) {
             weight += (hunger - 4);
         }
-		attention = false;
+		attentionS = false;
         return true;
     }
     return false;
 }
 
 void tamagotchi::discipline() {
-    if (attention && hunger >= 4) {
+    if (attentionS && hunger >= 4) {
             disciplineS += 1;
-            attention = false;
+            attentionS = false;
             return;
     }
-    if (attention && health >= MAXHEALTH) {
+    if (attentionS && health >= MAXHEALTH) {
             disciplineS += 1;
-            attention = false;
+            attentionS = false;
             return;
     }
-    if (attention && (disciplineS / age) < 2) {
+    if (attentionS && (disciplineS / age) < 2) {
         disciplineS += 1;
-        attention = false;
+        attentionS = false;
         return;
     }
     else {      // discipline for no reason
