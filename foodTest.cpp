@@ -4,9 +4,10 @@
 // C Monsters
 // 4/20/2017
 
-#include <tamagotchi.h>
+#include "tamagotchi.h"
 
 int main() {
+	std::cout << '\f';
     tamagotchi t;
     
 	//get user input
