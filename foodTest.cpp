@@ -34,7 +34,7 @@ int main() {
 			input = 4;
 		}
 		//display results
-		test.displayTest();
+		t.displayTest();
 		//check for user input
 		std::cout << "Choose desired function:\n0: Exit\n1: continue\n2: Medicine\n3: Clean\n";
 		std::cin >> input;
