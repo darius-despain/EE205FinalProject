@@ -20,8 +20,8 @@ int main() {
 		if (input == 2) {
 			std::cout << "Feed:\n1: Meal\n 2: Snack\n" << std::endl;
 			std::cin >> input;
-			if (input == 1) { t.feed("meal") }
-			if (input == 2) { t.feed("snack") }
+			if (input == 1) { t.feed("meal"); }
+			if (input == 2) { t.feed("snack"); }
 			input = 2;
 		}
 		if (input == 3) {
