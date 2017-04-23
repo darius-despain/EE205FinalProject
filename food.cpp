@@ -39,17 +39,17 @@ bool tamagotchi::feed(std::string food) {
 
 void tamagotchi::discipline() {
     if (attention && hunger >= 4) {
-            discipline += 1;
+            disciplineS += 1;
             attention = 0;
             return;
     }
     if (attention && health >= MAXHEALTH) {
-            discipline += 1;
+            disciplineS += 1;
             attention = 0;
             return;
     }
-    if (attention && (discipline / age) < 2) {
-        discipline += 1;
+    if (attention && (disciplineS / age) < 2) {
+        disciplineS += 1;
         attention = 0;
         return;
     }
