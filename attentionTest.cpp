@@ -19,7 +19,11 @@ int main() {
 		if (input == 2) test.lightSwitch();
 		if (input == 3) test.attention();
 		if (input == 4) test.wake();
-		if (input == 5) test.play();
+		if (input == 5) {
+			test.play();
+			cout << "Any Key to Continue.";
+			cin >> input;
+		}
 
 		//display results
 		test.displayTest();
@@ -34,6 +38,7 @@ int main() {
 void tamagotchi::displayTest() {
 	cout << "\f";
 	cout << "Light: " << light << endl;
-	cout << "Attention: " << attention << endl;
+	cout << "Sleep: " << sleepS << endl;
+	cout << "Attention: " << attentionS << endl;
 	cout << "Happiness: " << happiness << endl;
 }
