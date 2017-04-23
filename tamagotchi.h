@@ -36,7 +36,7 @@ public:
          disciplineS(0), hygiene(MAXHYG), clk(clock()), sick(false) {}
 
     //periodic functions
-    void hungry();      // decrease hunger value by 1
+    void digest();      // decrease hunger value by 1
     void sickly();        // has a 10% chance of getting sick
     bool attention();   // set attention variable to 1, return true if notification sent
     void sleep();       // set sleep variable to 1
@@ -59,6 +59,8 @@ public:
     void displayTest();
 
     //getters and setters
+	void setAttention(bool v) { attentionS = v; }
+	void setForm(bool v) { formS = v; }
     void setClk(clock_t t){clk = t; }
     clock_t getClk(){ return clk;}
 
