@@ -38,11 +38,11 @@ void tamagotchi::play(){ //5 rounds of guessing. win == +1 happiness
   
     int n = rand()%2; //0 is left and 1 is right
   
-    if(choice == left && n == 0){
+    if(choice == "left" && n == 0){
       cout << "You guessed right!\n";
       score++;
     }
-    else if(choice == right && n == 1){
+    else if(choice == "right" && n == 1){
       cout << "You guessed right!\n";
       score++;
     }
