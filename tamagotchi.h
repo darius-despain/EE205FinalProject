@@ -43,7 +43,7 @@ public:
     void sleep();       // set sleep variable to 1
     void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
     int form();         // set the form of tamagotchi
-	void wake();		// tamagotchi will wake up and turn on light
+	  void wake();		// tamagotchi will wake up and turn on light
 
     //user controlled functions
     bool feed(std::string food);        // increase hunger value, keep track of overfeeding

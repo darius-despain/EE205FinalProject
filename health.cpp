@@ -19,7 +19,8 @@ void tamagotchi::medicine(){
 
 // increase hygiene value by cleaning up
 void tamagotchi::clean(){
-  if(hygiene != MAXHYG) happiness += 2;
+  if(hygiene != MAXHYG ) happiness += 2;
+  if(happiness >= 4) happiness = 4;
   hygiene = MAXHYG;
 }
 
@@ -36,5 +37,5 @@ void tamagotchi::poop(){
   if(n <= hygiene && hygiene != MAXHYG){
     if(happiness != 0) happiness -= 1;
   }
-  if( hygiene == MAXHYG && n <= 5) happiness += 1; 
+  if( hygiene == MAXHYG && n <= 5 && happiness != 4) happiness += 1;
 }
