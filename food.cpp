@@ -26,6 +26,7 @@ bool tamagotchi::feed(std::string food) {
             weight += (hunger - 4);
         }
 	happiness += (rand() % 2);
+  if(happiness > 4) happiness = 4;
         attentionS = false;
         return true;
     }
@@ -36,6 +37,7 @@ bool tamagotchi::feed(std::string food) {
             weight += (hunger - 4);
         }
 	happiness += (rand() % 2);
+  if(happiness > 4) happiness = 4;
 	attentionS = false;
         return true;
     }
