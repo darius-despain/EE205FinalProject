@@ -9,7 +9,7 @@ int main(){
   std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Light\n3: Clean\n4: Medicine\n5: Discipline\n6: Play\n7: Continue\n8: Exit\n";
   std::cin >> input;
   //start loop
-  while(input != 8){
+  while(input != 8 && runS != true){
     //run periodic functions
     a.digest();
     a.sickly();
@@ -37,5 +37,6 @@ int main(){
     std::cin >> input;
   }
   //end Game
+  if(runS == true) std::cout << "Tamagotchi has Run!\n";
   std::cout << "Thank You For Playing!!\n\f";
 }

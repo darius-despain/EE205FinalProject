@@ -7,7 +7,7 @@
 #include "tamagotchi.h"
 
 void tamagotchi::digest() {
-    --hunger;
+    if((rand() % 2) == 0) --hunger;
     if (hunger < 0) {
 	happiness -= (rand() % 2);
     }

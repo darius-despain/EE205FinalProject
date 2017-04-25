@@ -3,15 +3,15 @@
 using namespace std;
 void tamagotchi::statDisplay() {//displays statistics to user
   cout << "\f";
+  cout << "form: " << form() << endl << endl;
 	cout << "hunger: " << hunger << endl;
-	cout << "discipline: " << disciplineS << endl;
-	cout << "form: " << form() << endl;
-  cout << "Light: " << light << endl;
-	cout << "Sleep: " << sleepS << endl;
-	cout << "Attention: " << attentionS << endl;
   cout << "Sick: " << sick << endl;
   cout << "hygiene: " << hygiene << endl;
-  cout << "happiness: " << happiness << endl;
+  cout << "happiness: " << happiness << endl << endl;
+	cout << "discipline: " << disciplineS << endl;
+  cout << "Light: " << light << endl;
+	cout << "Sleep: " << sleepS << endl;
+	cout << "Attention: " << attentionS << endl << endl;
   return;
 }
 void tamagotchi::mainDisplay() {//displays the "Game Window" including all elements. Considers light and other background conditions

@@ -12,7 +12,7 @@ void tamagotchi::lightSwitch(){
   	light = true;
     cout << "You have turned the light on.\n";
     if(light == true && sleepS == true){ //if light is on while tamagotchi is asleep
-      cout << "The tamagotchi is asleep!\n";
+      //cout << "The tamagotchi is asleep!\n";
       happiness--;
     }
   }
@@ -31,13 +31,13 @@ void tamagotchi::sleep(){ //set tamagotchi to sleep
 void tamagotchi::play(){ //5 rounds of guessing. win == +1 happiness
   string choice;
   int score = 0;
-  
-  for(int  i = 0; i < 5; i++){ 
+
+  for(int  i = 0; i < 5; i++){
     cout << "Will the tamagotchi turn left or right: ";
     cin >> choice;
-  
+
     int n = rand()%2; //0 is left and 1 is right
-  
+
     if(choice == "left" && n == 0){
       cout << "You guessed right!\n";
       score++;
@@ -47,7 +47,7 @@ void tamagotchi::play(){ //5 rounds of guessing. win == +1 happiness
       score++;
     }
     else
-      cout << "You guessed wrong!\n"; 
+      cout << "You guessed wrong!\n";
   }
   if(score <= 3){
     cout << "Congratulations! You won the game!\n";

@@ -30,6 +30,8 @@ private:
     int formS;           // 0 - 5
     bool light;         // true or false; current light setting
     bool misbehave;	// true if tamagotchi doesnt eat when hungry or play when sad
+    int runCount;     //to track number of loops happiness is at 0 before it runs
+    bool runS;        //flag for if tamagotchi is running
     clock_t clk;
 public:
     tamagotchi()
@@ -44,6 +46,7 @@ public:
     void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
     int form();         // set the form of tamagotchi
 	  void wake();		// tamagotchi will wake up and turn on light
+    void run();     //tests if tamagotchi needs to run
 
     //user controlled functions
     bool feed(std::string food);        // increase hunger value, keep track of overfeeding
@@ -58,7 +61,7 @@ public:
     void mainDisplay(); //displays the "Game Window" including all elements. Considers light and other background conditions
     void formDisplay(); //displays the tomagotchi at current form, also displays if it is sleeping and emotions
     void poopDisplay(); //displays poop on the screen at empty spot
-    void displayTest();
+    void displayTest(); //function for displaying the various test drivers. Not for use in main program
 
     //getters and setters
     void setAttention(bool v) { attentionS = v; }
