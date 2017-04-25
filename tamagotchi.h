@@ -68,6 +68,8 @@ public:
     void setAge(int v) { age = v; }
     void setMisbehave(bool v) { misbehave = v; }
     void setClk(clock_t t){clk = t; }
+
+    bool getRunS(){ return runS;}
     clock_t getClk(){ return clk;}
 
 };
