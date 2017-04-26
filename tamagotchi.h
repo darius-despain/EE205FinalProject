@@ -15,8 +15,8 @@
 #define MAXDISC 15
 #define MAXHYG 10
 
-class tamagotchi{
-private:
+class tamagotchi{ //base class for tamagotchi
+protected:
     int happiness;      // 0 - 4
     int health;         // 0 - MAXHEALTH
     int hunger;         // 0 - 4
@@ -32,28 +32,24 @@ private:
     bool misbehave;	// true if tamagotchi doesnt eat when hungry or play when sad
     int runCount;     //to track number of loops happiness is at 0 before it runs
     bool runS;        //flag for if tamagotchi is running
-    clock_t clk;
 public:
     tamagotchi()
         :happiness(4), health(MAXHEALTH), hunger(4), age(0), weight(MAXWEIGHT/2),
          disciplineS(0), hygiene(MAXHYG), clk(clock()), sick(false) {}
 
     //periodic functions
-    void digest();      // decrease hunger value by 1
-    void sickly();        // has a 10% chance of getting sick
-    bool attention();   // set attention variable to 1, return true if notification sent
-    void sleep();       // set sleep variable to 1
-    void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
-    int form();         // set the form of tamagotchi
-	  void wake();		// tamagotchi will wake up and turn on light
-    void run();     //tests if tamagotchi needs to run
+    virtual void digest();      // decrease hunger value by 1
+    virtual void sickly();        // has a 10% chance of getting sick
+    virtual bool attention();   // set attention variable to 1, return true if notification sent
+    virtual void sleep();       // set sleep variable to 1
+    virtual void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
+    int evolve();         // set the form of tamagotchi
+    virtual void run();     //tests if tamagotchi needs to run
 
     //user controlled functions
     bool feed(std::string food);        // increase hunger value, keep track of overfeeding
-    void lightSwitch();  // set to 1 if tamagotchi awake, if 1 and sleeping decrease happiness
     void clean();     // increase hygiene value by cleaning up
     void medicine();    // set sick variable to 0
-    void discipline();  // increase discipline variable
     void play();        // increase happiness by 1 if won, decrease if lost
 
     //display functions
@@ -70,6 +66,9 @@ public:
     void setClk(clock_t t){clk = t; }
 
     bool getRunS(){ return runS;}
-    clock_t getClk(){ return clk;}
 
 };
+
+class egg : public tamagotchi {
+  
+}
