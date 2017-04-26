@@ -7,6 +7,7 @@
 
 using namespace std;
 
+/*
 void tamagotchi::lightSwitch(){
   if(light == false){ //turn light on
   	light = true;
@@ -19,9 +20,12 @@ void tamagotchi::lightSwitch(){
   if(light == true) //turn light off
     light = false;
 }
+*/
 
 bool tamagotchi::attention(){ //sets to need attention
   attentionS = true;
+  happiness--;
+
 }
 
 void tamagotchi::sleep(){ //set tamagotchi to sleep
@@ -51,7 +55,7 @@ void tamagotchi::play(){ //5 rounds of guessing. win == +1 happiness
   }
   if(score <= 3){
     cout << "Congratulations! You won the game!\n";
-    happiness++;
+    happiness = 4; //if you win happiness goes to max
   }
   else
     cout << "Sorry, you lost the game.\n";
