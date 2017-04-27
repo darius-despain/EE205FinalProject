@@ -43,7 +43,7 @@ public:
     virtual bool attention();   // set attention variable to 1, return true if notification sent
     virtual void sleep();       // set sleep variable to 1
     virtual void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
-    int evolve();         // set the form of tamagotchi
+    bool evolve();         // set the form of tamagotchi
     virtual void run();     //tests if tamagotchi needs to run
 
     //user controlled functions
@@ -64,11 +64,55 @@ public:
     void setAge(int v) { age = v; }
     void setMisbehave(bool v) { misbehave = v; }
     void setClk(clock_t t){clk = t; }
-
     bool getRunS(){ return runS;}
 
 };
 
-class egg : public tamagotchi {
-  
+class egg: public tamagotchi {
+private:
+  int eggCount;
+public:
+  egg(): eggCount(0){}
+  void digest();      // decrease hunger value by 1
+  void sickly();        // has a 10% chance of getting sick
+  bool attention();   // set attention variable to 1, return true if notification sent
+  void sleep();       // set sleep variable to 1
+  void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
+  void run();     //tests if tamagotchi needs to run
+}
+
+class baby: public tamagotchi{
+  void digest();      // decrease hunger value by 1
+  void sickly();        // has a 10% chance of getting sick
+  bool attention();   // set attention variable to 1, return true if notification sent
+  void sleep();       // set sleep variable to 1
+  void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
+  void run();     //tests if tamagotchi needs to run
+}
+
+class teenager: public tamagotchi{
+  void digest();      // decrease hunger value by 1
+  void sickly();        // has a 10% chance of getting sick
+  bool attention();   // set attention variable to 1, return true if notification sent
+  void sleep();       // set sleep variable to 1
+  void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
+  void run();     //tests if tamagotchi needs to run
+}
+
+class adult: public tamagotchi{
+  void digest();      // decrease hunger value by 1
+  void sickly();        // has a 10% chance of getting sick
+  bool attention();   // set attention variable to 1, return true if notification sent
+  void sleep();       // set sleep variable to 1
+  void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
+  void run();     //tests if tamagotchi needs to run
+}
+
+class senior: public tamagotchi{
+  void digest();      // decrease hunger value by 1
+  void sickly();        // has a 10% chance of getting sick
+  bool attention();   // set attention variable to 1, return true if notification sent
+  void sleep();       // set sleep variable to 1
+  void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
+  void run();     //tests if tamagotchi needs to run
 }

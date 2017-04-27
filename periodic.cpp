@@ -10,3 +10,19 @@ void run(){ //tests if tamagotchi needs to run
   }
   return;
 }
+
+bool tamagotchi::form() {
+    switch(formS){
+      case(0):
+        if(eggCount >= 3) return true;
+      case(1):
+        if(weight >= 7) return true;
+      case(2):
+        if(weight >= 15) return true;
+      case(3):
+        if(weight >= 30) return true;
+      case(4):
+        if(weight >= 50) return true;
+      default: return false;
+    }
+}
