@@ -17,6 +17,7 @@
 
 class tamagotchi{ //base class for tamagotchi
 protected:
+    int attenCount; //attention counter
     int happiness;      // 0 - 4
     int health;         // 0 - MAXHEALTH
     int hunger;         // 0 - 4
@@ -35,7 +36,7 @@ protected:
 public:
     tamagotchi()
         :happiness(4), health(MAXHEALTH), hunger(4), age(0), weight(MAXWEIGHT/2),
-         disciplineS(0), hygiene(MAXHYG), clk(clock()), sick(false) {}
+         disciplineS(0), hygiene(MAXHYG), clk(clock()), sick(false), attenCount(0) {}
 
     //periodic functions
     virtual void digest();      // decrease hunger value by 1
