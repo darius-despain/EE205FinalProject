@@ -138,8 +138,7 @@ void tamagotchi::play(){ //5 rounds of guessing. win == max happiness, lose == +
   string choice;
   int score = 0;
   
-  attenCount = 0; //reset attention counter
-  attentionS = false; //reset attention
+  resetAttention();
 
   for(int  i = 0; i < 5; i++){
     cout << "Will the tamagotchi turn left or right: ";
