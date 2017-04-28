@@ -7,34 +7,119 @@
 
 using namespace std;
 
-/*
-void tamagotchi::lightSwitch(){
-  if(light == false){ //turn light on
-  	light = true;
-    cout << "You have turned the light on.\n";
-    if(light == true && sleepS == true){ //if light is on while tamagotchi is asleep
-      //cout << "The tamagotchi is asleep!\n";
+void tamagotchi::resetAttention(){ //reset attention and attention counter
+  attentionS = false;
+  attenCount = 0;
+}
+
+void tamagotchi::attention(){ //default attention
+  if(attentionS == true){ //if needs attention +1 to counter
+    attenCount++;
+    if(attenCount >= 4) //counter = 4+, happiness -1
       happiness--;
-    }
   }
-  if(light == true) //turn light off
-    light = false;
-}
-*/
-
-bool tamagotchi::attention(){ //sets to need attention
-  attentionS = true;
-  happiness--;
-
+  else //sets attention
+    attentionS = true; 
 }
 
-void tamagotchi::sleep(){ //set tamagotchi to sleep
+void baby::attention(){ 
+  if(attentionS == true){ //if needs attention +1 to counter
+    attenCount++;
+    if(attenCount >= 4) //counter = 4+, happiness -1
+      happiness--;
+  }
+  else{ //30% chance calls for attention
+    if(rand()%100 <= 30) 
+      attentionS = true;
+  }
+}
+
+void teen::attention(){ 
+  if(attentionS == true){ //if needs attention +1 to counter
+    attenCount++;
+    if(attenCount >= 4) //counter = 4+, happiness -1
+      happiness--;
+  }
+  else{ //10% chance calls for attention
+    if(rand()%100 <= 10)
+      attentionS = true;
+  }
+}
+
+void adult::attention(){
+  if(attentionS == true){ //if needs attention +1 to counter
+    attenCount++;
+    if(attenCount >= 4) //counter = 4+, happiness -1
+      happiness--;
+  }
+  else{ //15% chance calls for attention
+    if(rand()%100 <= 15)
+      attentionS = true;
+  }
+}
+
+void senior::attention(){ 
+  if(attentionS == true){ //if needs attention +1 to counter
+    attenCount++;
+    if(attenCount >= 4) //counter = 4+, happiness -1
+      happiness--;
+  }
+  else{ //15% chance calls for attention
+    if(rand()%100 <= 15)
+      attentionS = true;
+  }
+}
+
+void tamagotchi::sleep(){ //default sleep function
   sleepS = true;
 }
 
-void tamagotchi::play(){ //5 rounds of guessing. win == +1 happiness
+void baby::sleep(){ 
+  if(rand()%100 <= 10 && sleepS == false) //10% falling asleep 
+    sleepS = true;
+  
+  else if(sleepS == true){ //if asleep
+    if(rand()%100 > 20) //20% stay asleep
+      sleepS = false;
+  }
+}
+
+void teen::sleep(){
+  if(rand()%100 <= 20 && sleepS == false) //20% falling asleep
+    sleepS = true;
+  
+  else if(sleepS == true){ //if asleep
+    if(rand()%100 > 40) //40% stay asleep
+      sleepS = false;
+  }
+}
+
+void adult::sleep(){ 
+  if(rand()%100 <= 20 && sleepS == false) //20% fall asleep
+    sleepS = true;
+  
+  else if(sleepS == true){ //if asleep
+    if(rand()%100 > 30) //30% stay asleep
+      sleepS = false;
+  }
+}
+
+void senior::sleep(){ 
+  if(rand()%100 <= 10 && sleepS == false) //10% fall asleep
+    sleepS = true;
+  
+  else if(sleepS == true){ //if asleep
+    if(rand()%100 > 20) //20% stay asleep
+      sleepS = false;
+  }
+}
+
+void tamagotchi::play(){ //5 rounds of guessing. win == max happiness, lose == +1 happiness
   string choice;
   int score = 0;
+  
+  attenCount = 0; //reset attention counter
+  attentionS = false; //reset attention
 
   for(int  i = 0; i < 5; i++){
     cout << "Will the tamagotchi turn left or right: ";
@@ -57,11 +142,9 @@ void tamagotchi::play(){ //5 rounds of guessing. win == +1 happiness
     cout << "Congratulations! You won the game!\n";
     happiness = 4; //if you win happiness goes to max
   }
-  else
+  else{
     cout << "Sorry, you lost the game.\n";
+    happiness++;
+  }
 }
 
-void tamagotchi::wake() {
-	if (light == false) light = true;
-	sleepS = false;
-}
