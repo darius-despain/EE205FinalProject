@@ -6,6 +6,7 @@ int main(){
   tamagotchi a(3); //initialize tamagotchi of weight 3
   egg b; //initialize egg using tamagotchi above
 
+
   //display the main menu
   b.welcomeDisplay();
   //get user input
