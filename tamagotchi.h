@@ -71,7 +71,7 @@ public:
   void sleep();       // set sleep variable to 1
   void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
   void run();     //tests if tamagotchi needs to run
-}
+};
 
 class baby: public tamagotchi{
   baby(): tamagotchi(getWeight()){}
@@ -81,7 +81,7 @@ class baby: public tamagotchi{
   void sleep();       // set sleep variable to 1
   void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
   void run();     //tests if tamagotchi needs to run
-}
+};
 
 class teenager: public tamagotchi{
   teenager(): tamagotchi(getWeight()){}
@@ -91,7 +91,7 @@ class teenager: public tamagotchi{
   void sleep();       // set sleep variable to 1
   void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
   void run();     //tests if tamagotchi needs to run
-}
+};
 
 class adult: public tamagotchi{
   adult(): tamagotchi(getWeight()){}
@@ -101,7 +101,7 @@ class adult: public tamagotchi{
   void sleep();       // set sleep variable to 1
   void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
   void run();     //tests if tamagotchi needs to run
-}
+};
 
 class senior: public tamagotchi{
   senior(): tamagotchi(getWeight()){}
@@ -111,4 +111,4 @@ class senior: public tamagotchi{
   void sleep();       // set sleep variable to 1
   void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
   void run();     //tests if tamagotchi needs to run
-}
+};
