@@ -74,6 +74,7 @@ public:
 };
 
 class baby: public tamagotchi{
+public:
   baby(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
@@ -84,6 +85,7 @@ class baby: public tamagotchi{
 };
 
 class teenager: public tamagotchi{
+public:
   teenager(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
@@ -94,6 +96,7 @@ class teenager: public tamagotchi{
 };
 
 class adult: public tamagotchi{
+public:
   adult(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
@@ -104,6 +107,7 @@ class adult: public tamagotchi{
 };
 
 class senior: public tamagotchi{
+public:
   senior(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
