@@ -11,19 +11,20 @@ void run(){ //tests if tamagotchi needs to run
   return;
 }
 
-bool tamagotchi::evolve() {
+void tamagotchi::evolve() {
     switch(formS){
       case(0):
-        if(eggCount >= 3) return true;
+        if(eggCount >= 3){ evoS = true; formS++; return; }
         else{ eggCount++;}
       case(1):
-        if(weight >= 7) return true;
+        if(weight >= 7){evoS = true; formS++; return;}
       case(2):
-        if(weight >= 15) return true;
+        if(weight >= 15){evoS = true; formS++; return; }
       case(3):
-        if(weight >= 30) return true;
+        if(weight >= 30){evoS = true; formS++; return;}
       case(4):
-        if(weight >= 50) return true;
-      default: return false;
+        if(weight >= 50) {evoS = true; formS++; return;}
+      default: evoS = false;
+      return;
     }
 }
