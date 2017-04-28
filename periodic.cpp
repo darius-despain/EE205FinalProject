@@ -11,10 +11,11 @@ void run(){ //tests if tamagotchi needs to run
   return;
 }
 
-bool tamagotchi::form() {
+bool tamagotchi::evolve() {
     switch(formS){
       case(0):
         if(eggCount >= 3) return true;
+        else{ eggCount++;}
       case(1):
         if(weight >= 7) return true;
       case(2):

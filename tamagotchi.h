@@ -9,34 +9,25 @@
 #include <ctime>
 #include <iostream>
 
-#define MAXHEALTH 10
-#define MAXAGE 20
-#define MAXWEIGHT 20
 #define MAXDISC 15
 #define MAXHYG 10
 
 class tamagotchi{ //base class for tamagotchi
 protected:
-    int attenCount; //attention counter
+    int attenCount;     //attention counter
     int happiness;      // 0 - 4
-    int health;         // 0 - MAXHEALTH
     int hunger;         // 0 - 4
-    int age;            // 0 - MAXAGE
     int weight;         // 0 - MAXWEIGHT
-    int disciplineS;     // 0 - MAXDISC
-    bool sick;      // true or false
-    bool sleepS;     // true or false
+    bool sick;        // true or false
+    bool sleepS;      // true or false
     bool attentionS;     // true or false
     int hygiene;        // 0 - MAXHYG
-    int formS;           // 0 - 5
-    bool light;         // true or false; current light setting
-    bool misbehave;	// true if tamagotchi doesnt eat when hungry or play when sad
     int runCount;     //to track number of loops happiness is at 0 before it runs
     bool runS;        //flag for if tamagotchi is running
 public:
-    tamagotchi()
-        :happiness(4), health(MAXHEALTH), hunger(4), age(0), weight(MAXWEIGHT/2),
-         disciplineS(0), hygiene(MAXHYG), clk(clock()), sick(false), attenCount(0) {}
+    tamagotchi() // main constructor
+        :attenCount(0), happiness(4), hunger(4), weight(3), sick(false),
+        sleepS(false), attentionS(false), hygiene(MAXHYG), runCount(0), runS(false) {}
 
     //periodic functions
     virtual void digest();      // decrease hunger value by 1
@@ -57,14 +48,20 @@ public:
     void statDisplay(); //displays statistics to user
     void mainDisplay(); //displays the "Game Window" including all elements. Considers light and other background conditions
     void formDisplay(); //displays the tomagotchi at current form, also displays if it is sleeping and emotions
-    void poopDisplay(); //displays poop on the screen at empty spot
     void displayTest(); //function for displaying the various test drivers. Not for use in main program
 
     //getters and setters
-    void setAttention(bool v) { attentionS = v; }
-    void setAge(int v) { age = v; }
-    void setMisbehave(bool v) { misbehave = v; }
-    void setClk(clock_t t){clk = t; }
+    void setAttentionS(bool v) { attentionS = v; }
+
+    int getAttenCount(){ return attenCount;}
+    int getHappiness(){ return happiness}
+    int getHunger(){ return hunger;}
+    int getWeight(){ return weight;}
+    bool getSick(){ return sick;}
+    bool getSleepS(){ return sleepS;}
+    bool getAttentionS(){ return attentionS;}
+    int getHygiene(){return hygiene;}
+    int getRunCount(){ return runCount;}
     bool getRunS(){ return runS;}
 
 };
@@ -101,6 +98,7 @@ class teenager: public tamagotchi{
 }
 
 class adult: public tamagotchi{
+
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -110,6 +108,7 @@ class adult: public tamagotchi{
 }
 
 class senior: public tamagotchi{
+
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
