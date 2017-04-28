@@ -157,7 +157,7 @@ void tamagotchi::play(){ //5 rounds of guessing. win == max happiness, lose == +
     else
       cout << "You guessed wrong!\n";
   }
-  if(score <= 3){
+  if(score >= 3){
     cout << "Congratulations! You won the game!\n";
     happiness = 4; //if you win happiness goes to max
   }
