@@ -6,10 +6,8 @@
 
 #include <string>
 #include <cstdlib>
-#include <ctime>
 #include <iostream>
 
-#define MAXDISC 15
 #define MAXHYG 10
 
 class tamagotchi{ //base class for tamagotchi
@@ -24,10 +22,12 @@ protected:
     int hygiene;        // 0 - MAXHYG
     int runCount;     //to track number of loops happiness is at 0 before it runs
     bool runS;        //flag for if tamagotchi is running
+    bool evoS;       //flag for if it evolves
+    int formS;      //keeps track of current form of Tamagotchi
 public:
-    tamagotchi() // main constructor
-        :attenCount(0), happiness(4), hunger(4), weight(3), sick(false),
-        sleepS(false), attentionS(false), hygiene(MAXHYG), runCount(0), runS(false) {}
+    tamagotchi(int w) // main constructor
+        :attenCount(0), happiness(4), hunger(4), weight(w), sick(false),
+        sleepS(false), attentionS(false), hygiene(MAXHYG), runCount(0), runS(false), formS(0){}
 
     //periodic functions
     virtual void digest();      // decrease hunger value by 1
@@ -35,7 +35,7 @@ public:
     virtual bool attention();   // set attention variable to 1, return true if notification sent
     virtual void sleep();       // set sleep variable to 1
     virtual void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
-    bool evolve();         // set the form of tamagotchi
+    void evolve();         // set the form of tamagotchi
     virtual void run();     //tests if tamagotchi needs to run
 
     //user controlled functions
@@ -45,6 +45,7 @@ public:
     void play();        // increase happiness by 1 if won, decrease if lost
 
     //display functions
+    void welcomeDisplay();
     void statDisplay(); //displays statistics to user
     void mainDisplay(); //displays the "Game Window" including all elements. Considers light and other background conditions
     void formDisplay(); //displays the tomagotchi at current form, also displays if it is sleeping and emotions
@@ -53,26 +54,18 @@ public:
     //getters and setters
     void setAttentionS(bool v) { attentionS = v; }
 
-    int getAttenCount(){ return attenCount;}
-    int getHappiness(){ return happiness}
-    int getHunger(){ return hunger;}
     int getWeight(){ return weight;}
-    bool getSick(){ return sick;}
-    bool getSleepS(){ return sleepS;}
-    bool getAttentionS(){ return attentionS;}
-    int getHygiene(){return hygiene;}
-    int getRunCount(){ return runCount;}
     bool getRunS(){ return runS;}
-
+    bool getEvoS(){ return evoS;}
 };
 
 class egg: public tamagotchi {
 private:
   int eggCount;
 public:
-  egg(): eggCount(0){}
+  egg(): tamagotchi(getWeight()), eggCount(0){}
   void digest();      // decrease hunger value by 1
-  void sickly();        // has a 10% chance of getting sick
+  void sickly();      // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
   void sleep();       // set sleep variable to 1
   void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
@@ -80,6 +73,7 @@ public:
 }
 
 class baby: public tamagotchi{
+  baby(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -89,6 +83,7 @@ class baby: public tamagotchi{
 }
 
 class teenager: public tamagotchi{
+  teenager(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -98,7 +93,7 @@ class teenager: public tamagotchi{
 }
 
 class adult: public tamagotchi{
-
+  adult(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -108,7 +103,7 @@ class adult: public tamagotchi{
 }
 
 class senior: public tamagotchi{
-
+  senior(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
