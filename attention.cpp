@@ -12,66 +12,86 @@ void tamagotchi::resetAttention(){ //reset attention and attention counter
   attenCount = 0;
 }
 
-void tamagotchi::attention(){ //default attention
-  if(attentionS == true){ //if needs attention +1 to counter
+bool tamagotchi::attention(){ //default attention
+  /*if(attentionS == true){ //if needs attention +1 to counter
     attenCount++;
     if(attenCount >= 4) //counter = 4+, happiness -1
       happiness--;
   }
-  else //sets attention
-    attentionS = true; 
+  else{ //sets attention
+    attentionS = true;
+  } */
+  cout << "Default attention called!" << endl;
+  return true;
 }
 
-void baby::attention(){ 
+bool baby::attention(){ 
   if(attentionS == true){ //if needs attention +1 to counter
     attenCount++;
     if(attenCount >= 4) //counter = 4+, happiness -1
       happiness--;
+    return true;
   }
   else{ //30% chance calls for attention
-    if(rand()%100 <= 30) 
+    if(rand()%100 <= 30){ 
       attentionS = true;
+      return true;
+    }
   }
+  return false; //attention's not called
 }
 
-void teen::attention(){ 
+bool teen::attention(){ 
   if(attentionS == true){ //if needs attention +1 to counter
     attenCount++;
     if(attenCount >= 4) //counter = 4+, happiness -1
       happiness--;
+    return true;
   }
   else{ //10% chance calls for attention
-    if(rand()%100 <= 10)
+    if(rand()%100 <= 10){
       attentionS = true;
+      return true;
+    }
   }
+  return false; //attention's not called
 }
 
-void adult::attention(){
+bool adult::attention(){
   if(attentionS == true){ //if needs attention +1 to counter
     attenCount++;
     if(attenCount >= 4) //counter = 4+, happiness -1
       happiness--;
+    return true;
   }
   else{ //15% chance calls for attention
-    if(rand()%100 <= 15)
+    if(rand()%100 <= 15){
       attentionS = true;
+      return true;
+    }
   }
+  return false; //attention's not called
 }
 
-void senior::attention(){ 
+bool senior::attention(){ 
   if(attentionS == true){ //if needs attention +1 to counter
     attenCount++;
     if(attenCount >= 4) //counter = 4+, happiness -1
       happiness--;
+    return true;
   }
   else{ //15% chance calls for attention
-    if(rand()%100 <= 15)
+    if(rand()%100 <= 15){
       attentionS = true;
+      return true;
+    }
   }
+  return false; //attention's not called
 }
 
 void tamagotchi::sleep(){ //default sleep function
-  sleepS = true;
+  // sleepS = true;
+  cout << "Default sleep called!" << endl;
 }
 
 void baby::sleep(){ 
