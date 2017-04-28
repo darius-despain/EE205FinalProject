@@ -1,25 +1,76 @@
+// function definition for user interface display
+// 
+// 4/27/2017 tyler 
+//    Updated the displays so that it would be able to show the proper 
+//    form regardless of which form it is
+//    Added welcomeDisplay()
+//
+
 #include "tamagotchi.h"
 
-using namespace std;
-void tamagotchi::statDisplay() {//displays statistics to user
-  cout << "\f";
-  cout << "form: " << form() << endl << endl;
-	cout << "hunger: " << hunger << endl;
-  cout << "Sick: " << sick << endl;
-  cout << "hygiene: " << hygiene << endl;
-  cout << "happiness: " << happiness << endl << endl;
-	cout << "discipline: " << disciplineS << endl;
-  cout << "Light: " << light << endl;
-	cout << "Sleep: " << sleepS << endl;
-	cout << "Attention: " << attentionS << endl << endl;
+void tamagotchi::welcomeDisplay() {   // function to display what the game is about and only go away with user input
+  std::string n;
+  
+  std::cout << "\t\t\tWELCOME!!!" << std::endl;
+  std::cout << "You have stumbled across a mysterious egg and" << std::endl;
+  std::cout << "have decided that you want to take care of" << std::endl;
+  std::cout << "whatever hatches from the egg." << std::endl << std::endl;
+
+  std::cout << "In order to do so, you will have to feed it," << std::endl;
+  std::cout << "clean it, and even play with it. There will" << std::endl;
+  std::cout << "be times that it will get sick and need your" << std::endl;
+  std::cout << "help. Othertimes it will just sleep." << std::endl << std::endl;
+
+  std::cout << "Good luck with your new friend also known as" << std::endl;
+  std::cout << "\t\t\tTamagotchi" << std::endl;
+  std::cout << "\tPress Any Key to Continue";
+
+  std::cin >> n;
+}
+
+void tamagotchi::statDisplay() {    // display tamagotchi stats to user
+  std::cout << "Happiness: " << happiness << std::endl;
+  std::cout << "Hunger: " << hunger << std::endl;
+  std::cout << "Hygiene: " << hygiene << std::endl;
+
+  if (sick) {   // only show if tamagotchi is sick
+    std::cout << "Tamagotchi is sick!!!" << std::endl;
+  }
+  if (sleepS) { // only show if tamagotchi is sleeping
+    std::cout << "Shh, Tamagotchi is sleeping" << std::endl;
+  }
+  if (attentionS) { // only show if tamagotchi calls for attention
+    std::cout << "HEY! Tamagotchi wants your attention!" << std::endl;
+  }
   return;
 }
-void tamagotchi::mainDisplay() {//displays the "Game Window" including all elements. Considers light and other background conditions
+
+void egg::formDisplay() { // show user current form of tamagotchi
+  std::cout << '\f';
+  std::cout << "Form: Egg\n";
   return;
 }
-void tamagotchi::formDisplay() {//displays the tomagotchi at current form, also displays if it is sleeping and emotions
+
+void baby::formDisplay() { // show user current form of tamagotchi
+  std::cout << '\f';
+  std::cout << "Form: Baby\n";
   return;
 }
-void tamagotchi::poopDisplay() {//displays poop on the screen at empty spot
+
+void teenager::formDisplay() { // show user current form of tamagotchi
+  std::cout << '\f';
+  std::cout << "Form: Teenager\n";
+  return;
+}
+
+void adult::formDisplay() { // show user current form of tamagotchi
+  std::cout << '\f';
+  std::cout << "Form: Adult\n";
+  return;
+}
+
+void senior::formDisplay() { // show user current form of tamagotchi
+  std::cout << '\f';
+  std::cout << "Form: Senior\n";
   return;
 }
