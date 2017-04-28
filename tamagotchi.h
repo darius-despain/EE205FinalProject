@@ -42,7 +42,8 @@ public:
     bool feed(std::string food);        // increase hunger value, keep track of overfeeding
     void clean();     // increase hygiene value by cleaning up
     void medicine();    // set sick variable to 0
-    void play();        // increase happiness by 1 if won, decrease if lost
+    void play();        // increase happiness to max if won, increase by 1 if lost
+    void resetAttention(); //resets attention to false and attention counter to 0
 
     //display functions
     void statDisplay(); //displays statistics to user
