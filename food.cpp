@@ -2,23 +2,75 @@
 // Tyler Butuyan
 // tbutuyan
 // C Monsters
-// 4/16/2017
+// 4/16/2017 created the function definitions
+// 4/26/2017 updated functions for inheritence
 
 #include "tamagotchi.h"
 
-void tamagotchi::digest() {
-    if((rand() % 2) == 0) --hunger;
-    if (hunger < 0) {
-	happiness -= (rand() % 2);
+void egg::digest() { return; }
+
+void baby::digest() {   // percentage to get hungry
+    if ((rand() % 5) == 0) {
+        hunger--;
     }
-    return;
+    if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
+        weight--;
+        happiness--;
+    }
 }
 
-bool tamagotchi::feed(std::string food) {
-    // tamagotchi refuse to eat
-    if (hunger >= 4) {
-        return false;
+void teenager::digest() {   // percentage to get hungry
+    if ((rand() % 2) == 0) {
+        hunger--;
     }
+    if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
+        weight--;
+        happiness--;
+    }
+}
+
+void adult::digest() {   // percentage to get hungry
+    if ((rand() % 4) == 0) {
+        hunger--;
+    }
+    if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
+        weight--;
+        happiness--;
+    }
+}
+
+void senior::digest() {   // percentage to get hungry
+    if ((rand() % 6) == 0) {
+        hunger--;
+    }
+    if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
+        weight--;
+        happiness--;
+    }
+}
+
+void tamagotchi::feed(std::string food) {
+    if (food == "meal") {   // if feeding tamagotchi a meal
+        hunger = MAXHUNGER;
+        happiness++;
+        if (rand() % 10 == 0) { // chance of gaining weight
+            weight++;
+        }
+    }
+    if (food == "snack") {  // if feeding tamagotchi a snack
+        hunger += MAXHUNGER / 10;
+        happiness++;
+        if (rand() % 10 == 0) {  // chance of gaining weight
+            weight++;
+        }
+    }
+    if (hunger >= MAXHUNGER) {  // overfeeding results in weight gain
+        weight++;
+    }
+}
+
+/*
+bool tamagotchi::feed(std::string food) {
     // tamagotchi eats a meal
     if (food == "meal") {
         hunger += 2;
@@ -26,10 +78,12 @@ bool tamagotchi::feed(std::string food) {
             weight += (hunger - 4);
         }
 	happiness += (rand() % 2);
-  if(happiness > 4) happiness = 4;
-        attentionS = false;
+    }
+
+  if(happiness > 4) { happiness = 4;
         return true;
     }
+
     // tamagotchi eats a snack
     if (food == "snack") {
         ++hunger;
@@ -38,52 +92,10 @@ bool tamagotchi::feed(std::string food) {
         }
 	happiness += (rand() % 2);
   if(happiness > 4) happiness = 4;
-	attentionS = false;
+
         return true;
     }
-    misbehave = true;
     return false;
 }
+*/
 
-void tamagotchi::discipline() {
-    happiness -= (rand() % 2) + 1;
-
-    if (misbehave && hunger < 4) {
-            disciplineS += (rand() % 4) + 1;
-            return;
-    }
-    if (misbehave && happiness != 4) {
-            disciplineS += (rand() % 4) + 1;
-            return;
-    }
-    if (attentionS && disciplineS < (rand() % age)) {
-        disciplineS += (rand() % 4) + 1;
-        attentionS = false;
-        return;
-    }
-}
-
-int tamagotchi::form() {
-    if (age < 0) { return -1; }
-    else if (age < 1) {          // egg form
-        formS = 0;
-    }
-    else if (age < 5) {          // baby form
-        formS = 1;
-    }
-    else if (age < 17) {    // child form
-        formS = 2;
-    }
-    else if (age > 17) {    // adult form
-        if (disciplineS > age && happiness >= 4) {    // excellent form
-            formS = 3;
-        }
-        else if (disciplineS > age / 2 && happiness >= 2) {    // average form
-            formS = 4;
-        }
-        else if (happiness < 2) {      // bad form
-            formS = 5;
-        }
-    }
-    return formS;
-}

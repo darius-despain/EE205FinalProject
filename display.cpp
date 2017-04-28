@@ -7,6 +7,7 @@
 //
 
 #include "tamagotchi.h"
+#include <iomanip>
 
 void tamagotchi::welcomeDisplay() {   // function to display what the game is about and only go away with user input
   std::string n;
@@ -29,9 +30,13 @@ void tamagotchi::welcomeDisplay() {   // function to display what the game is ab
 }
 
 void tamagotchi::statDisplay() {    // display tamagotchi stats to user
-  std::cout << "Happiness: " << happiness << std::endl;
-  std::cout << "Hunger: " << hunger << std::endl;
-  std::cout << "Hygiene: " << hygiene << std::endl;
+  std::cout << std::setfill(' ') << std::setw(12) << "Happiness";
+  std::cout << std::setfill(' ') << std::setw(12) << "Hunger";
+  std::cout << std::setfill(' ') << std::setw(12) << "Hygiene";
+  std::cout << std::endl;
+  std::cout << std::setfill(' ') << std::setw(12) << happiness;
+  std::cout << std::setfill(' ') << std::setw(12) << hunger;
+  std::cout << std::setfill(' ') << std::setw(12) << hygiene;
 
   if (sick) {   // only show if tamagotchi is sick
     std::cout << "Tamagotchi is sick!!!" << std::endl;
