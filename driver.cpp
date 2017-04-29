@@ -6,11 +6,12 @@ int main(){
   tamagotchi a(3); //initialize tamagotchi of weight 3
   egg b; //initialize egg using tamagotchi above
 
+
   //display the main menu
   b.welcomeDisplay();
   //get user input
   int input = 0;
-  std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Light\n3: Clean\n4: Medicine\n5: Discipline\n6: Play\n7: Continue\n8: Exit\n";
+  std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Discipline\n5: Play\n6: Continue\n7: Exit\n";
   std::cin >> input;
   //start loop
   while(input != 8 && b.getRunS() != true && b.getEvoS() != true){
@@ -22,7 +23,7 @@ int main(){
     b.statDisplay();
 
     //get next user input
-    std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Light\n3: Clean\n4: Medicine\n5: Discipline\n6: Play\n7: Continue\n8: Exit\n";
+    std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Discipline\n5: Play\n6: Continue\n7: Exit\n";
     std::cin >> input;
   }
   if(b.getEvoS() == true){ //if the tamagotchi just evolved
@@ -33,7 +34,7 @@ int main(){
       c.statDisplay();
 
       //get next user input
-      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Light\n3: Clean\n4: Medicine\n5: Discipline\n6: Play\n7: Continue\n8: Exit\n";
+      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Discipline\n5: Play\n6: Continue\n7: Exit\n";
       std::cin >> input;
 
       //run periodic functions
@@ -49,11 +50,10 @@ int main(){
       switch(input){
         case(0): c.feed("meal"); break;
         case(1): c.feed("snack"); break;
-        case(2): c.lightSwitch(); break;
-        case(3): c.clean(); break;
-        case(4): c.medicine(); break;
-        case(5): c.discipline(); break;
-        case(6): c.play(); break;
+        case(2): c.clean(); break;
+        case(3): c.medicine(); break;
+        case(4): c.discipline(); break;
+        case(5): c.play(); break;
         default: break;
       }
     }
@@ -65,7 +65,7 @@ int main(){
       d.formDisplay();
       d.statDisplay();
           //get next user input
-      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Light\n3: Clean\n4: Medicine\n5: Discipline\n6: Play\n7: Continue\n8: Exit\n";
+      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Discipline\n5: Play\n6: Continue\n7: Exit\n";
       std::cin >> input;
 
       //run periodic functions
@@ -81,11 +81,10 @@ int main(){
       switch(input){
         case(0): d.feed("meal"); break;
         case(1): d.feed("snack"); break;
-        case(2): d.lightSwitch(); break;
-        case(3): d.clean(); break;
-        case(4): d.medicine(); break;
-        case(5): d.discipline(); break;
-        case(6): d.play(); break;
+        case(2): d.clean(); break;
+        case(3): d.medicine(); break;
+        case(4): d.discipline(); break;
+        case(5): d.play(); break;
         default: break;
       }
     }
@@ -97,7 +96,7 @@ int main(){
       e.statDisplay();
 
       //get next user input
-      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Light\n3: Clean\n4: Medicine\n5: Discipline\n6: Play\n7: Continue\n8: Exit\n";
+      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Discipline\n5: Play\n6: Continue\n7: Exit\n";
       std::cin >> input;
 
       //run periodic functions
@@ -113,11 +112,10 @@ int main(){
       switch(input){
         case(0): e.feed("meal"); break;
         case(1): e.feed("snack"); break;
-        case(2): e.lightSwitch(); break;
-        case(3): e.clean(); break;
-        case(4): e.medicine(); break;
-        case(5): e.discipline(); break;
-        case(6): e.play(); break;
+        case(2): e.clean(); break;
+        case(3): e.medicine(); break;
+        case(4): e.discipline(); break;
+        case(5): e.play(); break;
         default: break;
       }
     }
@@ -129,7 +127,7 @@ int main(){
       f.statDisplay();
 
       //get next user input
-      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Light\n3: Clean\n4: Medicine\n5: Discipline\n6: Play\n7: Continue\n8: Exit\n";
+      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Discipline\n5: Play\n6: Continue\n7: Exit\n";
       std::cin >> input;
 
       //run periodic functions
@@ -145,11 +143,10 @@ int main(){
       switch(input){
         case(0): f.feed("meal"); break;
         case(1): f.feed("snack"); break;
-        case(2): f.lightSwitch(); break;
-        case(3): f.clean(); break;
-        case(4): f.medicine(); break;
-        case(5): f.discipline(); break;
-        case(6): f.play(); break;
+        case(2): f.clean(); break;
+        case(3): f.medicine(); break;
+        case(4): f.discipline(); break;
+        case(5): f.play(); break;
         default: break;
         }
     }

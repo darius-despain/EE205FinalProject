@@ -71,9 +71,10 @@ public:
   void sleep();       // set sleep variable to 1
   void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
   void run();     //tests if tamagotchi needs to run
-}
+};
 
 class baby: public tamagotchi{
+public:
   baby(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
@@ -81,9 +82,10 @@ class baby: public tamagotchi{
   void sleep();       // set sleep variable to 1
   void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
   void run();     //tests if tamagotchi needs to run
-}
+};
 
 class teenager: public tamagotchi{
+public:
   teenager(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
@@ -91,9 +93,10 @@ class teenager: public tamagotchi{
   void sleep();       // set sleep variable to 1
   void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
   void run();     //tests if tamagotchi needs to run
-}
+};
 
 class adult: public tamagotchi{
+public:
   adult(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
@@ -101,9 +104,10 @@ class adult: public tamagotchi{
   void sleep();       // set sleep variable to 1
   void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
   void run();     //tests if tamagotchi needs to run
-}
+};
 
 class senior: public tamagotchi{
+public:
   senior(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
@@ -111,4 +115,4 @@ class senior: public tamagotchi{
   void sleep();       // set sleep variable to 1
   void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
   void run();     //tests if tamagotchi needs to run
-}
+};
