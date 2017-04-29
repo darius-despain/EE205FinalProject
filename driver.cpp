@@ -26,8 +26,9 @@ int main(){
     std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Discipline\n5: Play\n6: Continue\n7: Exit\n";
     std::cin >> input;
   }
+  baby c;
   if(b.getEvoS() == true){ //if the tamagotchi just evolved
-    baby c;
+
     while(input != 8 && c.getRunS() != true && c.getEvoS() != true){
       //display results
       c.formDisplay();
@@ -43,7 +44,6 @@ int main(){
       c.attention();
       c.sleep();
       c.poop();
-      c.form();
       c.evolve();
 
       //select clean or medicine based on current input
@@ -52,14 +52,14 @@ int main(){
         case(1): c.feed("snack"); break;
         case(2): c.clean(); break;
         case(3): c.medicine(); break;
-        case(4): c.discipline(); break;
         case(5): c.play(); break;
         default: break;
       }
     }
   }
+  teenager d;
   if(c.getEvoS() == true){ //if the tamagotchi just evolved
-    teenager d;
+
     while(input != 8 && d.getRunS() != true && d.getEvoS() != true){
       //display results
       d.formDisplay();
@@ -74,7 +74,6 @@ int main(){
       d.attention();
       d.sleep();
       d.poop();
-      d.form();
       d.evolve();
 
       //select clean or medicine based on current input
@@ -83,13 +82,14 @@ int main(){
         case(1): d.feed("snack"); break;
         case(2): d.clean(); break;
         case(3): d.medicine(); break;
-        case(4): d.discipline(); break;
         case(5): d.play(); break;
         default: break;
       }
     }
+  }
+  adult e;
   if(d.getEvoS() == true){ //if the tamagotchi just evolved
-    adult e;
+
     while(input != 8 && e.getRunS() != true && e.getEvoS() != true){
       //display results
       e.formDisplay();
@@ -105,7 +105,6 @@ int main(){
       e.attention();
       e.sleep();
       e.poop();
-      e.form();
       e.evolve();
 
       //select clean or medicine based on current input
@@ -114,13 +113,14 @@ int main(){
         case(1): e.feed("snack"); break;
         case(2): e.clean(); break;
         case(3): e.medicine(); break;
-        case(4): e.discipline(); break;
         case(5): e.play(); break;
         default: break;
       }
     }
+  }
+  senior f;
   if(e.getEvoS() == true){ //if the tamagotchi just evolved
-    senior f;
+
     while(input != 8 && f.getRunS() != true && f.getEvoS() != true){
       //display results
       f.formDisplay();
@@ -136,7 +136,6 @@ int main(){
       f.attention();
       f.sleep();
       f.poop();
-      f.form();
       f.evolve();
 
       //select clean or medicine based on current input
@@ -145,14 +144,14 @@ int main(){
         case(1): f.feed("snack"); break;
         case(2): f.clean(); break;
         case(3): f.medicine(); break;
-        case(4): f.discipline(); break;
         case(5): f.play(); break;
         default: break;
         }
-    }
+      }
+  }
   //end Game
-  if(a.getRunS() == true || b.getRunS() == true || c.getRunS() == true ||
-    d.getRunS() == true || e.getRunS() == true || f.getRunS() == true) {
+  if(a.getRunS() == true || b.getRunS() == true || c.getRunS() == true
+  || d.getRunS() == true || e.getRunS() == true || f.getRunS() == true) {
     std::cout << "Tamagotchi has Run!\n";
   }
   std::cout << "Thank You For Playing!!\n\f";
