@@ -5,6 +5,8 @@
 
 #include "tamagotchi.h"
 
+void tamagotchi::sickly() { return; }
+
 void egg::sickly() { return; }
 
 void baby::sickly() {         // 20% chance
@@ -39,6 +41,8 @@ void tamagotchi::medicine(){
     sick = false;
   }
 }
+
+void tamagotchi::poop() { return; }
 
 void egg::poop() { return; }
 
