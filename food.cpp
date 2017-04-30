@@ -7,6 +7,8 @@
 
 #include "tamagotchi.h"
 
+void tamagotchi::digest() { return; }
+
 void egg::digest() { return; }
 
 void baby::digest() {   // percentage to get hungry

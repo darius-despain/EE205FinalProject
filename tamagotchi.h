@@ -30,8 +30,8 @@ public:
     tamagotchi(int w): attenCount(0), happiness(4), hunger(4), weight(w), sick(false), sleepS(false), attentionS(false), hygiene(MAXHYG), runCount(0), runS(false), formS(0){}
 
     //periodic functions
-    virtual void digest();      // decrease hunger value by 1
-    virtual void sickly();        // has a 10% chance of getting sick
+	virtual void digest();      // decrease hunger value by 1
+	virtual void sickly();        // has a 10% chance of getting sick
     virtual bool attention();   // set attention variable to 1, return true if notification sent
     virtual void sleep();       // set sleep variable to 1
     virtual void poop();        // check if needs to poop, decrease hygiene value, lower than threshold decrease health by 1
@@ -48,8 +48,7 @@ public:
     //display functions
     void welcomeDisplay();
     void statDisplay(); //displays statistics to user
-    void mainDisplay(); //displays the "Game Window" including all elements. Considers light and other background conditions
-    virtual void formDisplay(); //displays the tomagotchi at current form, also displays if it is sleeping and emotions
+    virtual void formDisplay() {}; //displays the tomagotchi at current form, also displays if it is sleeping and emotions
     void displayTest(); //function for displaying the various test drivers. Not for use in main program
 
     //getters and setters
