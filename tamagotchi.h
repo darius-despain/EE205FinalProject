@@ -9,6 +9,7 @@
 #include <iostream>
 
 #define MAXHYG 10
+#define MAXHUNGER 4
 
 class tamagotchi{ //base class for tamagotchi
 protected:
@@ -39,7 +40,7 @@ public:
     virtual void run();     //tests if tamagotchi needs to run
 
     //user controlled functions
-    bool feed(std::string food);        // increase hunger value, keep track of overfeeding
+    void feed(std::string food);        // increase hunger value, keep track of overfeeding
     void clean();     // increase hygiene value by cleaning up
     void medicine();    // set sick variable to 0
     void play();        // increase happiness to max if won, increase by 1 if lost
@@ -84,9 +85,9 @@ public:
   void run();     //tests if tamagotchi needs to run
 };
 
-class teenager: public tamagotchi{
+class teen: public tamagotchi{
 public:
-  teenager(): tamagotchi(getWeight()){}
+  teen(): tamagotchi(getWeight()){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent

@@ -19,7 +19,7 @@ void baby::digest() {   // percentage to get hungry
     }
 }
 
-void teenager::digest() {   // percentage to get hungry
+void teen::digest() {   // percentage to get hungry
     if ((rand() % 2) == 0) {
         hunger--;
     }
@@ -98,4 +98,3 @@ bool tamagotchi::feed(std::string food) {
     return false;
 }
 */
-

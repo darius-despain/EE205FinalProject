@@ -13,7 +13,7 @@ void baby::sickly() {         // 20% chance
   }
 }
 
-void teenager::sickly() {     // 10% chance
+void teen::sickly() {     // 10% chance
   if((rand() % 10) == 0) {
     sick = true;
   }
@@ -43,7 +43,8 @@ void tamagotchi::medicine(){
 void egg::poop() { return; }
 
 void baby::poop() {
-  if((rand() % 20) == 0){       // 20% chance of poop
+  int n = (rand() % 5);
+  if(n == 0){       // 20% chance of poop
     hygiene--;
   }
   // have a chance of reducing happiness proportional to hygiene
@@ -53,8 +54,9 @@ void baby::poop() {
   if( hygiene == MAXHYG && n <= 5 && happiness != 4) happiness += 1;
 }
 
-void teenager::poop() {
-  if((rand() % 20) == 0){       // 20% chance of poop
+void teen::poop() {
+  int n = (rand() % 5);
+  if(n == 0){       // 20% chance of poop
     hygiene--;
   }
   // have a chance of reducing happiness proportional to hygiene
@@ -65,7 +67,8 @@ void teenager::poop() {
 }
 
 void adult::poop() {
-  if((rand() % 10) == 0){       // 10% chance of poop
+  int n = (rand() % 10);
+  if(n == 0){       // 10% chance of poop
     hygiene--;
   }
   // have a chance of reducing happiness proportional to hygiene
@@ -76,7 +79,8 @@ void adult::poop() {
 }
 
 void senior::poop() {
-  if((rand() % 20) == 0){       // 20% chance of poop
+  int n = (rand() % 5);
+  if(n == 0){       // 20% chance of poop
     hygiene--;
   }
   // have a chance of reducing happiness proportional to hygiene

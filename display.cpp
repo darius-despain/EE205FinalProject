@@ -1,7 +1,7 @@
 // function definition for user interface display
-// 
-// 4/27/2017 tyler 
-//    Updated the displays so that it would be able to show the proper 
+//
+// 4/27/2017 tyler
+//    Updated the displays so that it would be able to show the proper
 //    form regardless of which form it is
 //    Added welcomeDisplay()
 //
@@ -11,7 +11,7 @@
 
 void tamagotchi::welcomeDisplay() {   // function to display what the game is about and only go away with user input
   std::string n;
-  
+
   std::cout << "\t\t\tWELCOME!!!" << std::endl;
   std::cout << "You have stumbled across a mysterious egg and" << std::endl;
   std::cout << "have decided that you want to take care of" << std::endl;
@@ -62,7 +62,7 @@ void baby::formDisplay() { // show user current form of tamagotchi
   return;
 }
 
-void teenager::formDisplay() { // show user current form of tamagotchi
+void teen::formDisplay() { // show user current form of tamagotchi
   std::cout << '\f';
   std::cout << "Form: Teenager\n";
   return;

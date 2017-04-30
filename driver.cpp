@@ -57,7 +57,7 @@ int main(){
       }
     }
   }
-  teenager d;
+  teen d;
   if(c.getEvoS() == true){ //if the tamagotchi just evolved
 
     while(input != 8 && d.getRunS() != true && d.getEvoS() != true){
