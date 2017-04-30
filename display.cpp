@@ -12,7 +12,8 @@
 void tamagotchi::welcomeDisplay() {   // function to display what the game is about and only go away with user input
   std::string n;
 
-  std::cout << "\t\t\tWELCOME!!!" << std::endl;
+  std::cout << '\f';
+  std::cout << "\t\tWELCOME!!!" << std::endl;
   std::cout << "You have stumbled across a mysterious egg and" << std::endl;
   std::cout << "have decided that you want to take care of" << std::endl;
   std::cout << "whatever hatches from the egg." << std::endl << std::endl;
@@ -23,20 +24,22 @@ void tamagotchi::welcomeDisplay() {   // function to display what the game is ab
   std::cout << "help. Othertimes it will just sleep." << std::endl << std::endl;
 
   std::cout << "Good luck with your new friend also known as" << std::endl;
-  std::cout << "\t\t\tTamagotchi" << std::endl;
+  std::cout << "\t\tTamagotchi" << std::endl;
   std::cout << "\tPress Any Key to Continue";
 
   std::cin >> n;
+  std::cout << '\f';
 }
 
 void tamagotchi::statDisplay() {    // display tamagotchi stats to user
-  std::cout << std::setfill(' ') << std::setw(12) << "Happiness";
-  std::cout << std::setfill(' ') << std::setw(12) << "Hunger";
-  std::cout << std::setfill(' ') << std::setw(12) << "Hygiene";
+  std::cout << std::setfill(' ') << std::setw(10) << "Happiness";
+  std::cout << std::setfill(' ') << std::setw(10) << "Hunger";
+  std::cout << std::setfill(' ') << std::setw(10) << "Hygiene";
   std::cout << std::endl;
-  std::cout << std::setfill(' ') << std::setw(12) << happiness;
-  std::cout << std::setfill(' ') << std::setw(12) << hunger;
-  std::cout << std::setfill(' ') << std::setw(12) << hygiene;
+  std::cout << std::setfill(' ') << std::setw(10) << happiness;
+  std::cout << std::setfill(' ') << std::setw(10) << hunger;
+  std::cout << std::setfill(' ') << std::setw(10) << hygiene;
+  std::cout << std::endl;
 
   if (sick) {   // only show if tamagotchi is sick
     std::cout << "Tamagotchi is sick!!!" << std::endl;
@@ -47,6 +50,7 @@ void tamagotchi::statDisplay() {    // display tamagotchi stats to user
   if (attentionS) { // only show if tamagotchi calls for attention
     std::cout << "HEY! Tamagotchi wants your attention!" << std::endl;
   }
+  std::cout << std::endl;
   return;
 }
 
