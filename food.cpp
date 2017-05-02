@@ -17,7 +17,7 @@ void baby::digest() {   // percentage to get hungry
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
-        happiness--;
+        if(happiness > 0) happiness--;
     }
 }
 
@@ -27,7 +27,7 @@ void teen::digest() {   // percentage to get hungry
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
-        happiness--;
+        if(happiness > 0) happiness--;
     }
 }
 
@@ -37,7 +37,7 @@ void adult::digest() {   // percentage to get hungry
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
-        happiness--;
+        if(happiness > 0) happiness--;
     }
 }
 
@@ -47,7 +47,8 @@ void senior::digest() {   // percentage to get hungry
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
-        happiness--;
+        if(happiness > 0) happiness--;
+
     }
 }
 

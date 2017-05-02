@@ -14,7 +14,7 @@ int main(){
   std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Discipline\n5: Play\n6: Continue\n7: Exit\n";
   std::cin >> input;
   //start loop
-  while(input != 8 && b.getRunS() != true && b.getEvoS() != true){
+  while(input != 7 && b.getRunS() != true && b.getEvoS() != true){
 
     b.evolve();
 
@@ -29,7 +29,7 @@ int main(){
   baby c;
   if(b.getEvoS() == true){ //if the tamagotchi just evolved
 
-    while(input != 8 && c.getRunS() != true && c.getEvoS() != true){
+    while(input != 7 && c.getRunS() != true && c.getEvoS() != true){
       //display results
       c.formDisplay();
       c.statDisplay();
@@ -45,6 +45,7 @@ int main(){
       c.sleep();
       c.poop();
       c.evolve();
+      c.run();
 
       //select clean or medicine based on current input
       switch(input){
@@ -60,7 +61,7 @@ int main(){
   teen d;
   if(c.getEvoS() == true){ //if the tamagotchi just evolved
 
-    while(input != 8 && d.getRunS() != true && d.getEvoS() != true){
+    while(input != 7 && d.getRunS() != true && d.getEvoS() != true){
       //display results
       d.formDisplay();
       d.statDisplay();
@@ -75,6 +76,7 @@ int main(){
       d.sleep();
       d.poop();
       d.evolve();
+      c.run();
 
       //select clean or medicine based on current input
       switch(input){
@@ -90,7 +92,7 @@ int main(){
   adult e;
   if(d.getEvoS() == true){ //if the tamagotchi just evolved
 
-    while(input != 8 && e.getRunS() != true && e.getEvoS() != true){
+    while(input != 7 && e.getRunS() != true && e.getEvoS() != true){
       //display results
       e.formDisplay();
       e.statDisplay();
@@ -106,6 +108,7 @@ int main(){
       e.sleep();
       e.poop();
       e.evolve();
+      e.run();
 
       //select clean or medicine based on current input
       switch(input){
@@ -121,7 +124,7 @@ int main(){
   senior f;
   if(e.getEvoS() == true){ //if the tamagotchi just evolved
 
-    while(input != 8 && f.getRunS() != true && f.getEvoS() != true){
+    while(input != 7 && f.getRunS() != true && f.getEvoS() != true){
       //display results
       f.formDisplay();
       f.statDisplay();
@@ -137,6 +140,7 @@ int main(){
       f.sleep();
       f.poop();
       f.evolve();
+      f.run();
 
       //select clean or medicine based on current input
       switch(input){
@@ -146,8 +150,8 @@ int main(){
         case(3): f.medicine(); break;
         case(5): f.play(); break;
         default: break;
-        }
       }
+    }
   }
   //end Game
   if(a.getRunS() == true || b.getRunS() == true || c.getRunS() == true
