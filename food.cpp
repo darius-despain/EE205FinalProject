@@ -13,42 +13,73 @@ void egg::digest() { return; }
 
 void baby::digest() {   // percentage to get hungry
     if ((rand() % 5) == 0) {
+        if (hunger != 0) {
         hunger--;
+        }
+        else {
+            hunger = 0;
+        }
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
         if(happiness > 0) happiness--;
+        if (happiness == 0) {
+            happiness = 0;
+        }
     }
 }
 
 void teen::digest() {   // percentage to get hungry
     if ((rand() % 2) == 0) {
+        if (hunger != 0) {
         hunger--;
+        }
+        else {
+            hunger = 0;
+        }
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
         if(happiness > 0) happiness--;
+        if (happiness == 0) {
+            happiness = 0;
+        }
     }
 }
 
 void adult::digest() {   // percentage to get hungry
     if ((rand() % 4) == 0) {
+        if (hunger != 0) {
         hunger--;
+        }
+        else {
+            hunger = 0;
+        }
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
         if(happiness > 0) happiness--;
+        if (happiness == 0) {
+            happiness = 0;
+        }
     }
 }
 
 void senior::digest() {   // percentage to get hungry
     if ((rand() % 6) == 0) {
+        if (hunger != 0) {
         hunger--;
+        }
+        else {
+            hunger = 0;
+        }
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
         if(happiness > 0) happiness--;
-
+        if (happiness == 0) {
+            happiness = 0;
+        }
     }
 }
 
