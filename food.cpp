@@ -86,14 +86,14 @@ void senior::digest() {   // percentage to get hungry
 void tamagotchi::feed(std::string food) {
     if (food == "meal") {   // if feeding tamagotchi a meal
         hunger = MAXHUNGER;
-        happiness++;
+        if(happiness != 4) happiness++;
         if (rand() % 10 == 0) { // chance of gaining weight
             weight++;
         }
     }
     if (food == "snack") {  // if feeding tamagotchi a snack
-        hunger += MAXHUNGER / 10;
-        happiness++;
+        hunger++;
+        if(happiness != 4) happiness++;
         if (rand() % 10 == 0) {  // chance of gaining weight
             weight++;
         }

@@ -16,18 +16,21 @@ void baby::sickly() {         // 20% chance
 }
 
 void teen::sickly() {     // 10% chance
+  if(sleepS == true) return;
   if((rand() % 10) == 0) {
     sick = true;
   }
 }
 
 void adult::sickly() {        // 15% chance
+  if(sleepS == true) return;
   if((rand() % 15) == 0) {
     sick = true;
   }
 }
 
 void senior::sickly() {       // 20% chance
+  if(sleepS == true) return;
   if((rand() % 20) == 0) {
     sick = true;
   }
@@ -47,6 +50,7 @@ void tamagotchi::poop() { return; }
 void egg::poop() { return; }
 
 void baby::poop() {
+  if(sleepS == true) return;
   int n = (rand() % 5);
   if(n == 0){       // 20% chance of poop
     hygiene--;
@@ -59,6 +63,7 @@ void baby::poop() {
 }
 
 void teen::poop() {
+  if(sleepS == true) return;
   int n = (rand() % 5);
   if(n == 0){       // 20% chance of poop
     hygiene--;
@@ -71,6 +76,7 @@ void teen::poop() {
 }
 
 void adult::poop() {
+  if(sleepS == true) return;
   int n = (rand() % 10);
   if(n == 0){       // 10% chance of poop
     hygiene--;
@@ -83,6 +89,7 @@ void adult::poop() {
 }
 
 void senior::poop() {
+  if(sleepS == true) return;
   int n = (rand() % 5);
   if(n == 0){       // 20% chance of poop
     hygiene--;

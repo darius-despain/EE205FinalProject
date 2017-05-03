@@ -49,8 +49,8 @@ int main(){
 
       //select clean or medicine based on current input
       switch(input){
-        case(0): c.feed("meal"); break;
-        case(1): c.feed("snack"); break;
+        case(0): c.feed("snack"); break;
+        case(1): c.feed("meal"); break;
         case(2): c.clean(); break;
         case(3): c.medicine(); break;
         case(5): c.play(); break;
@@ -80,8 +80,8 @@ int main(){
 
       //select clean or medicine based on current input
       switch(input){
-        case(0): d.feed("meal"); break;
-        case(1): d.feed("snack"); break;
+        case(0): d.feed("snack"); break;
+        case(1): d.feed("meal"); break;
         case(2): d.clean(); break;
         case(3): d.medicine(); break;
         case(5): d.play(); break;
@@ -112,8 +112,8 @@ int main(){
 
       //select clean or medicine based on current input
       switch(input){
-        case(0): e.feed("meal"); break;
-        case(1): e.feed("snack"); break;
+        case(0): e.feed("snack"); break;
+        case(1): e.feed("meal"); break;
         case(2): e.clean(); break;
         case(3): e.medicine(); break;
         case(5): e.play(); break;
@@ -144,8 +144,8 @@ int main(){
 
       //select clean or medicine based on current input
       switch(input){
-        case(0): f.feed("meal"); break;
-        case(1): f.feed("snack"); break;
+        case(0): f.feed("snack"); break;
+        case(1): f.feed("meal"); break;
         case(2): f.clean(); break;
         case(3): f.medicine(); break;
         case(5): f.play(); break;
