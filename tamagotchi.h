@@ -64,7 +64,7 @@ class egg: public tamagotchi {
 private:
   int eggCount;
 public:
-  egg(): tamagotchi(getWeight()), eggCount(0){}
+  egg(int w): tamagotchi(w), eggCount(0){}
   void digest();      // decrease hunger value by 1
   void sickly();      // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -77,7 +77,7 @@ public:
 
 class baby: public tamagotchi{
 public:
-  baby(): tamagotchi(getWeight()){}
+  baby(int w): tamagotchi(w){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -91,7 +91,7 @@ public:
 
 class teen: public tamagotchi{
 public:
-  teen(): tamagotchi(getWeight()){}
+  teen(int w): tamagotchi(w){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -104,7 +104,7 @@ public:
 
 class adult: public tamagotchi{
 public:
-  adult(): tamagotchi(getWeight()){}
+  adult(int w): tamagotchi(w){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -117,7 +117,7 @@ public:
 
 class senior: public tamagotchi{
 public:
-  senior(): tamagotchi(getWeight()){}
+  senior(int w): tamagotchi(w){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
