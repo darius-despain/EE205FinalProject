@@ -25,7 +25,7 @@ void tamagotchi::welcomeDisplay() {   // function to display what the game is ab
 
   std::cout << "Good luck with your new friend also known as" << std::endl;
   std::cout << "\t\tTamagotchi" << std::endl;
-  std::cout << "\tPress Any Key to Continue";
+  std::cout << "\tPress Any Key to Continue\n";
 
   std::cin >> n;
   std::cout << '\f';
