@@ -5,9 +5,14 @@
 //    form regardless of which form it is
 //    Added welcomeDisplay()
 //
+// 5/1/2017 tyler
+//		fixed formatting
+//		added actual forms for tamagotchi
+//
 
 #include "tamagotchi.h"
 #include <iomanip>
+#include <fstream>
 
 void tamagotchi::welcomeDisplay() {   // function to display what the game is about and only go away with user input
   std::string n;
@@ -24,7 +29,7 @@ void tamagotchi::welcomeDisplay() {   // function to display what the game is ab
   std::cout << "help. Othertimes it will just sleep." << std::endl << std::endl;
 
   std::cout << "Good luck with your new friend also known as" << std::endl;
-  std::cout << "\t\tTamagotchi" << std::endl;
+  std::cout << "\t\tTamagotchi" << std::endl << std::endl;
   std::cout << "\tPress Any Key to Continue\n";
 
   std::cin >> n;
@@ -35,10 +40,12 @@ void tamagotchi::statDisplay() {    // display tamagotchi stats to user
   std::cout << std::setfill(' ') << std::setw(10) << "Happiness";
   std::cout << std::setfill(' ') << std::setw(10) << "Hunger";
   std::cout << std::setfill(' ') << std::setw(10) << "Hygiene";
+  std::cout << std::setfill(' ') << std::setw(10) << "Weight";
   std::cout << std::endl;
   std::cout << std::setfill(' ') << std::setw(10) << happiness;
   std::cout << std::setfill(' ') << std::setw(10) << hunger;
   std::cout << std::setfill(' ') << std::setw(10) << hygiene;
+  std::cout << std::setfill(' ') << std::setw(10) << weight;
   std::cout << std::endl;
 
   if (sick) {   // only show if tamagotchi is sick
@@ -48,7 +55,13 @@ void tamagotchi::statDisplay() {    // display tamagotchi stats to user
     std::cout << "Shh, Tamagotchi is sleeping" << std::endl;
   }
   if (attentionS) { // only show if tamagotchi calls for attention
-    std::cout << "HEY! Tamagotchi wants your attention!" << std::endl;
+	  if (sleepS) { 
+		attentionS = false;
+		attenCount = 0;
+	  }
+	  else {
+		  std::cout << "HEY! Tamagotchi wants your attention!" << std::endl;
+	  }
   }
   std::cout << std::endl;
   return;
@@ -57,29 +70,64 @@ void tamagotchi::statDisplay() {    // display tamagotchi stats to user
 void egg::formDisplay() { // show user current form of tamagotchi
   std::cout << '\f';
   std::cout << "Form: Egg\n";
+
+  std::ifstream a("egg.txt");
+  std::cout << a.rdbuf() << std::endl;
+  a.close();
+
+  std::cout << std::endl;
+
   return;
 }
 
 void baby::formDisplay() { // show user current form of tamagotchi
   std::cout << '\f';
   std::cout << "Form: Baby\n";
+
+  std::ifstream a("baby.txt");
+  std::cout << a.rdbuf() << std::endl;
+  a.close();
+
+  std::cout << std::endl;
+
   return;
 }
 
 void teen::formDisplay() { // show user current form of tamagotchi
   std::cout << '\f';
   std::cout << "Form: Teenager\n";
+
+  std::ifstream a("teen.txt");
+  std::cout << a.rdbuf() << std::endl;
+  a.close();
+
+  std::cout << std::endl;
+
   return;
 }
 
 void adult::formDisplay() { // show user current form of tamagotchi
   std::cout << '\f';
   std::cout << "Form: Adult\n";
+
+  std::ifstream a("adult.txt");
+  std::cout << a.rdbuf() << std::endl;
+  a.close();
+
+  std::cout << std::endl;
+
   return;
 }
 
 void senior::formDisplay() { // show user current form of tamagotchi
   std::cout << '\f';
   std::cout << "Form: Senior\n";
+
+  std::ifstream a("senior.txt");
+  std::cout << a.rdbuf() << std::endl;
+  a.close();
+
+  std::cout << std::endl;
+
   return;
 }

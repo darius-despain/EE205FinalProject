@@ -10,6 +10,7 @@
 
 #define MAXHYG 10
 #define MAXHUNGER 10
+#define MAXHAPPINESS 10
 
 class tamagotchi{ //base class for tamagotchi
 protected:
@@ -27,7 +28,7 @@ protected:
     int formS;      //keeps track of current form of Tamagotchi
 public:
   // main constructor
-    tamagotchi(int w): attenCount(0), happiness(4), hunger(4), weight(w), sick(false), sleepS(false), attentionS(false), hygiene(MAXHYG), runCount(0), runS(false), formS(0){}
+    tamagotchi(int w): attenCount(0), happiness(MAXHAPPINESS), hunger(MAXHUNGER), weight(w), sick(false), sleepS(false), attentionS(false), hygiene(MAXHYG), runCount(0), runS(false), formS(0){}
 
     //periodic functions
 	virtual void digest();      // decrease hunger value by 1
@@ -63,7 +64,7 @@ class egg: public tamagotchi {
 private:
   int eggCount;
 public:
-  egg(): tamagotchi(getWeight()), eggCount(0){}
+  egg(int w): tamagotchi(w), eggCount(0){}
   void digest();      // decrease hunger value by 1
   void sickly();      // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -76,7 +77,7 @@ public:
 
 class baby: public tamagotchi{
 public:
-  baby(): tamagotchi(getWeight()){}
+  baby(int w): tamagotchi(w){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -90,7 +91,7 @@ public:
 
 class teen: public tamagotchi{
 public:
-  teen(): tamagotchi(getWeight()){}
+  teen(int w): tamagotchi(w){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -103,7 +104,7 @@ public:
 
 class adult: public tamagotchi{
 public:
-  adult(): tamagotchi(getWeight()){}
+  adult(int w): tamagotchi(w){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent
@@ -116,7 +117,7 @@ public:
 
 class senior: public tamagotchi{
 public:
-  senior(): tamagotchi(getWeight()){}
+  senior(int w): tamagotchi(w){}
   void digest();      // decrease hunger value by 1
   void sickly();        // has a 10% chance of getting sick
   bool attention();   // set attention variable to 1, return true if notification sent

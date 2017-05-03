@@ -13,123 +13,71 @@ void egg::digest() { return; }
 
 void baby::digest() {   // percentage to get hungry
     if ((rand() % 5) == 0) {
-        if (hunger != 0) {
-        hunger--;
-        }
-        else {
-            hunger = 0;
-        }
+        if (hunger > 0)
+			hunger--;
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
-        if(happiness > 0) happiness--;
-        if (happiness == 0) {
-            happiness = 0;
-        }
+        if(happiness > 0) 
+			happiness--;
     }
 }
 
 void teen::digest() {   // percentage to get hungry
     if ((rand() % 2) == 0) {
-        if (hunger != 0) {
-        hunger--;
-        }
-        else {
-            hunger = 0;
-        }
+        if (hunger > 0)
+			hunger--;
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
-        if(happiness > 0) happiness--;
-        if (happiness == 0) {
-            happiness = 0;
-        }
+        if(happiness > 0) 
+			happiness--;
     }
 }
 
 void adult::digest() {   // percentage to get hungry
     if ((rand() % 4) == 0) {
-        if (hunger != 0) {
-        hunger--;
-        }
-        else {
-            hunger = 0;
-        }
+        if (hunger > 0)
+			hunger--;
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
-        if(happiness > 0) happiness--;
-        if (happiness == 0) {
-            happiness = 0;
-        }
+        if(happiness > 0) 
+			happiness--;
     }
 }
 
 void senior::digest() {   // percentage to get hungry
     if ((rand() % 6) == 0) {
-        if (hunger != 0) {
-        hunger--;
-        }
-        else {
-            hunger = 0;
-        }
+        if (hunger > 0)
+			hunger--;
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
         weight--;
-        if(happiness > 0) happiness--;
-        if (happiness == 0) {
-            happiness = 0;
-        }
+        if(happiness > 0) 
+			happiness--;
     }
 }
 
 void tamagotchi::feed(std::string food) {
     if (food == "meal") {   // if feeding tamagotchi a meal
         hunger = MAXHUNGER;
-        if(happiness != 4) happiness++;
-        if (rand() % 10 == 0) { // chance of gaining weight
+        if(happiness < MAXHAPPINESS) 
+			happiness++;
+        if (rand() % 10 == 0)  // chance of gaining weight
             weight++;
-        }
     }
     if (food == "snack") {  // if feeding tamagotchi a snack
-        if(hunger != MAXHUNGER) hunger++;
-        if(happiness != 4) happiness++;
+        if(hunger < MAXHUNGER) 
+			hunger += (MAXHUNGER / 5);
+        if(happiness < MAXHAPPINESS) 
+			happiness++;
         if (rand() % 10 == 0) {  // chance of gaining weight
             weight++;
         }
     }
     if (hunger >= MAXHUNGER) {  // overfeeding results in weight gain
         weight++;
-        hunger == MAXHUNGER;
+        hunger = MAXHUNGER;
     }
 }
-
-/*
-bool tamagotchi::feed(std::string food) {
-    // tamagotchi eats a meal
-    if (food == "meal") {
-        hunger += 2;
-        if (hunger > 4) {
-            weight += (hunger - 4);
-        }
-	happiness += (rand() % 2);
-    }
-
-  if(happiness > 4) { happiness = 4;
-        return true;
-    }
-
-    // tamagotchi eats a snack
-    if (food == "snack") {
-        ++hunger;
-        if (hunger > 4) {
-            weight += (hunger - 4);
-        }
-	happiness += (rand() % 2);
-  if(happiness > 4) happiness = 4;
-
-        return true;
-    }
-    return false;
-}
-*/
