@@ -59,7 +59,7 @@ void baby::poop() {
   if(n <= hygiene && hygiene != MAXHYG){
     if(happiness != 0) happiness -= 1;
   }
-  if( hygiene == MAXHYG && n <= 5 && happiness != 4) happiness += 1;
+  if( hygiene == MAXHYG && n <= 5 && happiness != MAXHAPPINESS) happiness += 1;
 }
 
 void teen::poop() {
@@ -72,7 +72,7 @@ void teen::poop() {
   if(n <= hygiene && hygiene != MAXHYG){
     if(happiness != 0) happiness -= 1;
   }
-  if( hygiene == MAXHYG && n <= 5 && happiness != 4) happiness += 1;
+  if( hygiene == MAXHYG && n <= 5 && happiness != MAXHAPPINESS) happiness += 1;
 }
 
 void adult::poop() {
@@ -85,7 +85,7 @@ void adult::poop() {
   if(n <= hygiene && hygiene != MAXHYG){
     if(happiness != 0) happiness -= 1;
   }
-  if( hygiene == MAXHYG && n <= 5 && happiness != 4) happiness += 1;
+  if( hygiene == MAXHYG && n <= 5 && happiness != MAXHAPPINESS) happiness += 1;
 }
 
 void senior::poop() {
@@ -98,12 +98,12 @@ void senior::poop() {
   if(n <= hygiene && hygiene != MAXHYG){
     if(happiness != 0) happiness -= 1;
   }
-  if( hygiene == MAXHYG && n <= 5 && happiness != 4) happiness += 1;
+  if( hygiene == MAXHYG && n <= 5 && happiness != MAXHAPPINESS) happiness += 1;
 }
 
 // increase hygiene value by cleaning up
 void tamagotchi::clean(){
   if(hygiene != MAXHYG ) happiness += 2;
-  if(happiness >= 4) happiness = 4;
+  if(happiness >= MAXHAPPINESS) happiness = MAXHAPPINESS;
   hygiene = MAXHYG;
 }
