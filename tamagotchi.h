@@ -10,6 +10,7 @@
 
 #define MAXHYG 10
 #define MAXHUNGER 10
+#define MAXHAPPINESS 10
 
 class tamagotchi{ //base class for tamagotchi
 protected:
