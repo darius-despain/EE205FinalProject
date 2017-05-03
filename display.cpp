@@ -48,7 +48,13 @@ void tamagotchi::statDisplay() {    // display tamagotchi stats to user
     std::cout << "Shh, Tamagotchi is sleeping" << std::endl;
   }
   if (attentionS) { // only show if tamagotchi calls for attention
-    std::cout << "HEY! Tamagotchi wants your attention!" << std::endl;
+	  if (sleepS) { 
+		attentionS = false;
+		attenCount = 0;
+	  }
+	  else {
+		  std::cout << "HEY! Tamagotchi wants your attention!" << std::endl;
+	  }
   }
   std::cout << std::endl;
   return;
