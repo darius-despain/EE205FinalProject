@@ -9,7 +9,7 @@
 #include <iostream>
 
 #define MAXHYG 10
-#define MAXHUNGER 4
+#define MAXHUNGER 10
 
 class tamagotchi{ //base class for tamagotchi
 protected:
