@@ -29,7 +29,7 @@ void tamagotchi::welcomeDisplay() {   // function to display what the game is ab
   std::cout << "help. Othertimes it will just sleep." << std::endl << std::endl;
 
   std::cout << "Good luck with your new friend also known as" << std::endl;
-  std::cout << "\t\tTamagotchi" << std::endl;
+  std::cout << "\t\tTamagotchi" << std::endl << std::endl;
   std::cout << "\tPress Any Key to Continue\n";
 
   std::cin >> n;
