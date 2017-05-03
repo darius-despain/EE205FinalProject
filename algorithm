@@ -1,4 +1,33 @@
 // algorithm file for final project
 
-start timer to track age
+create tamagotchi with egg form
+egg form
+	evolve to next form
+baby form
+	evolve to next form
+	or run away
+teenage form
+	evolve to next form
+	or run away
+adult form
+	evolve to next form
+	or run away
+senior form
+	run away
 
+run until egg hatches
+after egg hatches
+	Automatic:
+		chance to decrease hunger
+		chance to sleep
+		chance to call for attention
+		chance to get sick
+		run away if sad for too long
+		run away if hungry for too long
+		evolve if weight and happiness is good
+	User:
+		chance to heal sickness
+		feed meal or snack
+		play with tamagotchi
+
+display stats and options after every user input
