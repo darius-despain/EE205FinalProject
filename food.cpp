@@ -92,7 +92,7 @@ void tamagotchi::feed(std::string food) {
         }
     }
     if (food == "snack") {  // if feeding tamagotchi a snack
-        hunger++;
+        if(hunger != MAXHUNGER) hunger++;
         if(happiness != 4) happiness++;
         if (rand() % 10 == 0) {  // chance of gaining weight
             weight++;
@@ -100,6 +100,7 @@ void tamagotchi::feed(std::string food) {
     }
     if (hunger >= MAXHUNGER) {  // overfeeding results in weight gain
         weight++;
+        hunger == MAXHUNGER;
     }
 }
 

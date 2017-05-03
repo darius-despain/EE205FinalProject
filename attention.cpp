@@ -145,11 +145,11 @@ void tamagotchi::play(){ //5 rounds of guessing. win == max happiness, lose == +
   string choice;
   int score = 0;
 
-  if(sleepS = true){ //cant play when asleep
+  if(sleepS == true){ //cant play when asleep
     cout << "Tamagotchi is asleep!" << endl;
     return;
   }
-  
+
   resetAttention();
 
   for(int  i = 0; i < 5; i++){
