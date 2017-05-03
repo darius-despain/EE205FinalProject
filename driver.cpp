@@ -4,7 +4,7 @@ int main(){
 
   //initialize timer and tamagotchi of weight 3
   tamagotchi a(3); //initialize tamagotchi of weight 3
-  egg b; //initialize egg using tamagotchi above
+  egg b(a.getWeight()); //initialize egg using tamagotchi above
 
 
   //display the main menu
@@ -36,7 +36,7 @@ int main(){
 	}
 	
   }
-  baby c;
+  baby c(b.getWeight());
   if(b.getEvoS() == true){ //if the tamagotchi just evolved
 
     while(input != 6 && c.getRunS() != true && c.getEvoS() != true){
@@ -73,7 +73,7 @@ int main(){
       }
     }
   }
-  teen d;
+  teen d(c.getWeight());
   if(c.getEvoS() == true){ //if the tamagotchi just evolved
 
     while(input != 6 && d.getRunS() != true && d.getEvoS() != true){
@@ -110,7 +110,7 @@ int main(){
 	  }
     }
   }
-  adult e;
+  adult e(d.getWeight());
   if(d.getEvoS() == true){ //if the tamagotchi just evolved
 
     while(input != 6 && e.getRunS() != true && e.getEvoS() != true){
@@ -147,7 +147,7 @@ int main(){
 	  }
     }
   }
-  senior f;
+  senior f(e.getWeight());
   if(e.getEvoS() == true){ //if the tamagotchi just evolved
 
     while(input != 6 && f.getRunS() != true && f.getEvoS() != true){
