@@ -31,7 +31,7 @@ bool baby::attention(){
     return true;
   }
   else{ //15% chance calls for attention
-    if(rand()%100 < 15){
+    if(rand()%100 < 5){
       attentionS = true;
       return true;
     }
