@@ -13,7 +13,7 @@ void egg::digest() { return; }
 
 void baby::digest() {   // percentage to get hungry
     if ((rand() % 5) == 0) {
-        if (hunger != 0)
+        if (hunger > 0)
 			hunger--;
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
@@ -25,7 +25,7 @@ void baby::digest() {   // percentage to get hungry
 
 void teen::digest() {   // percentage to get hungry
     if ((rand() % 2) == 0) {
-        if (hunger != 0)
+        if (hunger > 0)
 			hunger--;
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
@@ -37,7 +37,7 @@ void teen::digest() {   // percentage to get hungry
 
 void adult::digest() {   // percentage to get hungry
     if ((rand() % 4) == 0) {
-        if (hunger != 0)
+        if (hunger > 0)
 			hunger--;
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
@@ -49,7 +49,7 @@ void adult::digest() {   // percentage to get hungry
 
 void senior::digest() {   // percentage to get hungry
     if ((rand() % 6) == 0) {
-        if (hunger != 0)
+        if (hunger > 0)
 			hunger--;
     }
     if (hunger < (MAXHUNGER / 4)) {     // too hungry results in weight loss
@@ -62,15 +62,15 @@ void senior::digest() {   // percentage to get hungry
 void tamagotchi::feed(std::string food) {
     if (food == "meal") {   // if feeding tamagotchi a meal
         hunger = MAXHUNGER;
-        if(happiness != MAXHAPPINESS) 
+        if(happiness < MAXHAPPINESS) 
 			happiness++;
         if (rand() % 10 == 0)  // chance of gaining weight
             weight++;
     }
     if (food == "snack") {  // if feeding tamagotchi a snack
-        if(hunger != MAXHUNGER) 
-			hunger += 2;
-        if(happiness != MAXHAPPINESS) 
+        if(hunger < MAXHUNGER) 
+			hunger += (MAXHUNGER / 5);
+        if(happiness < MAXHAPPINESS) 
 			happiness++;
         if (rand() % 10 == 0) {  // chance of gaining weight
             weight++;
@@ -78,6 +78,6 @@ void tamagotchi::feed(std::string food) {
     }
     if (hunger >= MAXHUNGER) {  // overfeeding results in weight gain
         weight++;
-        hunger == MAXHUNGER;
+        hunger = MAXHUNGER;
     }
 }
