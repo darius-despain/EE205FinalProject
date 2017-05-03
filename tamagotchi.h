@@ -28,7 +28,7 @@ protected:
     int formS;      //keeps track of current form of Tamagotchi
 public:
   // main constructor
-    tamagotchi(int w): attenCount(0), happiness(4), hunger(4), weight(w), sick(false), sleepS(false), attentionS(false), hygiene(MAXHYG), runCount(0), runS(false), formS(0){}
+    tamagotchi(int w): attenCount(0), happiness(MAXHAPPINESS), hunger(MAXHUNGER), weight(w), sick(false), sleepS(false), attentionS(false), hygiene(MAXHYG), runCount(0), runS(false), formS(0){}
 
     //periodic functions
 	virtual void digest();      // decrease hunger value by 1
