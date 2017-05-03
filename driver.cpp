@@ -9,6 +9,8 @@ int main(){
 
   //display the main menu
   b.welcomeDisplay();
+  b.formDisplay();
+  b.statDisplay();
   //get user input
   int input = 0;
   std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Play\n5: Continue\n6: Exit\n";
@@ -25,6 +27,14 @@ int main(){
     //get next user input
     std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Play\n5: Continue\n6: Exit\n";
     std::cin >> input;
+
+	//remove bad inputs
+	if (std::cin.fail()) {
+		std::cin.clear();
+		std::cin.ignore();
+		input = 5;
+	}
+	
   }
   baby c;
   if(b.getEvoS() == true){ //if the tamagotchi just evolved
@@ -33,10 +43,6 @@ int main(){
       //display results
       c.formDisplay();
       c.statDisplay();
-
-      //get next user input
-      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Play\n5: Continue\n6: Exit\n";
-      std::cin >> input;
 
       //run periodic functions
       c.digest();
@@ -47,14 +53,23 @@ int main(){
       c.evolve();
       c.run();
 
+	  //get next user input
+	  std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Play\n5: Continue\n6: Exit\n";
+	  std::cin >> input;
+
       //select clean or medicine based on current input
+	  if (std::cin.fail()) {
+		  std::cin.clear();
+		  std::cin.ignore();
+		  input = 5;
+	  }
       switch(input){
         case(0): c.feed("snack"); break;
         case(1): c.feed("meal"); break;
         case(2): c.clean(); break;
         case(3): c.medicine(); break;
         case(4): c.play(); break;
-        default: break;
+		default: break;
       }
     }
   }
@@ -65,9 +80,6 @@ int main(){
       //display results
       d.formDisplay();
       d.statDisplay();
-      //get next user input
-      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Play\n5: Continue\n6: Exit\n";
-      std::cin >> input;
 
       //run periodic functions
       d.digest();
@@ -78,15 +90,24 @@ int main(){
       d.evolve();
       c.run();
 
-      //select clean or medicine based on current input
-      switch(input){
-        case(0): d.feed("snack"); break;
-        case(1): d.feed("meal"); break;
-        case(2): d.clean(); break;
-        case(3): d.medicine(); break;
-        case(4): d.play(); break;
-        default: break;
-      }
+	  //get next user input
+	  std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Play\n5: Continue\n6: Exit\n";
+	  std::cin >> input;
+
+	  //select clean or medicine based on current input
+	  if (std::cin.fail()) {
+		  std::cin.clear();
+		  std::cin.ignore();
+		  input = 5;
+	  }
+	  switch (input) {
+	  case(0): d.feed("snack"); break;
+	  case(1): d.feed("meal"); break;
+	  case(2): d.clean(); break;
+	  case(3): d.medicine(); break;
+	  case(4): d.play(); break;
+	  default: break;
+	  }
     }
   }
   adult e;
@@ -97,10 +118,6 @@ int main(){
       e.formDisplay();
       e.statDisplay();
 
-      //get next user input
-      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Play\n5: Continue\n6: Exit\n";
-      std::cin >> input;
-
       //run periodic functions
       e.digest();
       e.sickly();
@@ -110,15 +127,24 @@ int main(){
       e.evolve();
       e.run();
 
-      //select clean or medicine based on current input
-      switch(input){
-        case(0): e.feed("snack"); break;
-        case(1): e.feed("meal"); break;
-        case(2): e.clean(); break;
-        case(3): e.medicine(); break;
-        case(4): e.play(); break;
-        default: break;
-      }
+	  //get next user input
+	  std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Play\n5: Continue\n6: Exit\n";
+	  std::cin >> input;
+
+	  //select clean or medicine based on current input
+	  if (std::cin.fail()) {
+		  std::cin.clear();
+		  std::cin.ignore();
+		  input = 5;
+	  }
+	  switch (input) {
+	  case(0): e.feed("snack"); break;
+	  case(1): e.feed("meal"); break;
+	  case(2): e.clean(); break;
+	  case(3): e.medicine(); break;
+	  case(4): e.play(); break;
+	  default: break;
+	  }
     }
   }
   senior f;
@@ -129,10 +155,6 @@ int main(){
       f.formDisplay();
       f.statDisplay();
 
-      //get next user input
-      std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Play\n5: Continue\n6: Exit\n";
-      std::cin >> input;
-
       //run periodic functions
       f.digest();
       f.sickly();
@@ -142,21 +164,31 @@ int main(){
       f.evolve();
       f.run();
 
-      //select clean or medicine based on current input
-      switch(input){
-        case(0): f.feed("snack"); break;
-        case(1): f.feed("meal"); break;
-        case(2): f.clean(); break;
-        case(3): f.medicine(); break;
-        case(4): f.play(); break;
-        default: break;
-      }
+	  //get next user input
+	  std::cout << "Choose desired function:\n0: Feed Snack\n1: Feed Meal\n2: Clean\n3: Medicine\n4: Play\n5: Continue\n6: Exit\n";
+	  std::cin >> input;
+
+	  //select clean or medicine based on current input
+	  if (std::cin.fail()) {
+		  std::cin.clear();
+		  std::cin.ignore();
+		  input = 5;
+	  }
+	  switch (input) {
+	  case(0): f.feed("snack"); break;
+	  case(1): f.feed("meal"); break;
+	  case(2): f.clean(); break;
+	  case(3): f.medicine(); break;
+	  case(4): f.play(); break;
+	  default: break;
+	  }
     }
   }
+
   //end Game
   if(a.getRunS() == true || b.getRunS() == true || c.getRunS() == true
   || d.getRunS() == true || e.getRunS() == true || f.getRunS() == true) {
-    std::cout << "Tamagotchi has Run!\n";
+    std::cout << "Tamagotchi Ran Away!\n";
   }
   std::cout << "Thank You For Playing!!\n\f";
 }
